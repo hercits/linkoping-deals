@@ -1,0 +1,81 @@
+{
+ "attribution": "© OpenStreetMap contributors",
+ "stores": {
+  "city-gross-djurgarden": {
+   "lat": 58.38668,
+   "lon": 15.58848,
+   "src": "OpenStreetMap",
+   "match": "Åsmestadsgatan 8, Linköping"
+  },
+  "coop-lambohov": {
+   "lat": 58.38822,
+   "lon": 15.56547,
+   "src": "OpenStreetMap",
+   "match": "Tröskaregatan 33, Linköping"
+  },
+  "coop-vallaplan": {
+   "lat": 58.40725,
+   "lon": 15.59769,
+   "src": "OpenStreetMap",
+   "match": "Coop Vallaplan, Linköping"
+  },
+  "hemkop-ryd": {
+   "lat": 58.4091,
+   "lon": 15.5627,
+   "src": "Hemköp"
+  },
+  "stora-coop-garnisonen": {
+   "lat": 58.39116,
+   "lon": 15.62413,
+   "src": "OpenStreetMap",
+   "match": "Garnisonsvägen 50, Linköping"
+  },
+  "ica-nara-skolgatan": {
+   "lat": 58.4132,
+   "lon": 15.60252,
+   "src": "OpenStreetMap",
+   "match": "ICA Nära Skolgatan, Linköping"
+  },
+  "willys-skaggetorp": {
+   "lat": 58.4263,
+   "lon": 15.5832,
+   "src": "Willys"
+  },
+  "ica-maxi": {
+   "lat": 58.43251,
+   "lon": 15.59238,
+   "src": "OpenStreetMap",
+   "match": "Västra Svedengatan 12, Linköping"
+  },
+  "willys-tornby": {
+   "lat": 58.4341,
+   "lon": 15.5893,
+   "src": "Willys"
+  },
+  "city-gross-tornby": {
+   "lat": 58.43486,
+   "lon": 15.5881,
+   "src": "OpenStreetMap",
+   "match": "Norra Svedengatan 9, Linköping"
+  },
+  "lidl-ekholmen": {
+   "lat": 58.38615,
+   "lon": 15.67871,
+   "src": "OpenStreetMap",
+   "match": "Järdalavägen 1, Linköping"
+  },
+  "ica-kvantum-signalen": {
+   "lat": 58.38076,
+   "lon": 15.68074,
+   "src": "OpenStreetMap",
+   "match": "ICA Kvantum Signalen, Linköping"
+  }
+ },
+ "home": {
+  "lat": 58.39232,
+  "lon": 15.58419,
+  "src": "OpenStreetMap",
+  "match": "Vallastaden, Linköping, Sweden",
+  "name": "Vallastaden"
+ }
+}

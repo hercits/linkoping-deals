@@ -1,0 +1,25 @@
+name: Probe Matpriskollen HTML
+on:
+  push:
+    paths: [.github/workflows/probe.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download two store pages
+        run: |
+          mkdir -p probe
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          curl -sSL -A "$UA" -o probe/hemkop-ryd.html "https://matpriskollen.se/butiker/linkoping-ryd--039a3b70-9775-4719-b790-d5e0e448bfed" -w "hemkop %{http_code} %{size_download}\n"
+          curl -sSL -A "$UA" -o probe/willys-tornby.html "https://matpriskollen.se/butiker/linkoping-tornby--4bc6a66c-b649-40d6-ae0f-41880520930d" -w "willys %{http_code} %{size_download}\n"
+          grep -o 'erbjudanden' probe/*.html | sort | uniq -c
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe
+          git diff --cached --quiet || (git commit -m "Probe: raw store pages" && git pull --rebase && git push)

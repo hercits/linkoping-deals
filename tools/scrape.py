@@ -198,11 +198,19 @@ def enrich_axfood(items, host, store):
         o["member"] = promo.get("campaignType") == "LOYALTY"
         if promo.get("redeemLimitLabel") and not o.get("cond"):
             o["cond"] = promo["redeemLimitLabel"] + "."
-        # verdict: is the offer price below the lowest price of the past 30 days (same unit)?
-        price = promo.get("price")
-        low = money(o["low30"])
-        if isinstance(price, (int, float)) and low and unit_of(o["low30"]) in (unit, unit_of(promo.get("cartLabel")) or unit, "st", "kg", "l"):
-            o["verified"] = price < low - 0.005
+        # verdict: is the price per item (or per kg) below the lowest price of the past 30 days?
+        each = None
+        m = re.search(r"(\d+)\s*för\s*(\d[\d\s]*(?:[.,]\d+)?)", o.get("pr") or "", re.I)
+        if m:
+            each = money(m.group(2)) / int(m.group(1))
+        elif isinstance(promo.get("price"), (int, float)):
+            each = promo["price"] / max(1, int(promo.get("qualifyingCount") or 1))
+        lows = [float(a.replace(",", ".")) for a in re.findall(r"\d+(?:[.,]\d+)?", (o["low30"] or "").split("kr")[0])]
+        if each and lows:
+            if each < min(lows) - 0.005:
+                o["verified"] = True
+            elif each >= max(lows) - 0.005:
+                o["verified"] = False
         img = (cands[0][0].get("image") or {}).get("url")
         big = (cands[0][0].get("originalImage") or {}).get("url")
         if img:

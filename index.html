@@ -1032,7 +1032,7 @@ footer a { color: inherit; }
   function thumb(it) {
     const ph = `<span class="ph">${CAT_SHORT[it.c] || ""}</span>`;
     if (!it.img) return `<span class="thumb none">${ph}</span>`;
-    return `<span class="thumb"><img src="${IMG(it.img, "thumb100p")}" alt="" loading="lazy" decoding="async"></span>`;
+    return `<span class="thumb"><img src="${IMG(it.img, "thumb100p")}" srcset="${IMG(it.img, "thumb100p")} 1x, ${IMG(it.img, "full")} 2x" data-fallback="${IMG(it.img, "thumb100p")}" alt="" loading="lazy" decoding="async"></span>`;
   }
 
   function row(it, idx, showStore) {
@@ -1056,7 +1056,7 @@ footer a { color: inherit; }
   function moreHtml(it) {
     const s = BYID[it.sid];
     const big = it.img
-      ? `<div class="big"><img src="${IMG(it.img, "thumb300p")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
+      ? `<div class="big"><img src="${IMG(it.img, "full")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
       : `<div class="big none">没有图片</div>`;
     const cond = condZh(it.cond);
     return `<div class="more">${big}<dl>
@@ -1148,7 +1148,10 @@ footer a { color: inherit; }
   document.addEventListener("error", (e) => {
     const img = e.target;
     if (!(img instanceof HTMLImageElement)) return;
-    if (img.dataset.fallback) { const f = img.dataset.fallback; delete img.dataset.fallback; img.src = f; return; }
+    if (img.dataset.fallback) {
+      const f = img.dataset.fallback; delete img.dataset.fallback;
+      if (img.currentSrc !== f && img.src !== f || img.srcset) { img.removeAttribute("srcset"); img.src = f; return; }
+    }
     const box = img.parentElement;
     if (box) { box.classList.add("none"); if (box.classList.contains("big")) box.textContent = "没有图片"; }
   }, true);

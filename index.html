@@ -1,0 +1,1143 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>林雪平超市特价</title>
+<meta name="description" content="林雪平 12 家超市的本周特价，按到 Vallastaden 的距离排列，每天早上自动更新。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow receipt-like column; a small map up top; a sticky filter bar; every price sits on a yellow Swedish shelf tag at the right edge */
+:root {
+  --paper: #f3f5f1;
+  --card: #ffffff;
+  --ink: #18201b;
+  --muted: #5b675f;
+  --line: #dce2db;
+  --soft: #e9eee8;
+  --tag: #ffd83a;
+  --tag-ink: #16160f;
+  --accent: #1d6a45;
+  --accent-ink: #ffffff;
+  --warn: #a8501c;
+  --c-ica: #d0483c;
+  --c-coop: #2f8a59;
+  --c-willys: #3768b0;
+  --c-hemkop: #d47a22;
+  --c-lidl: #6a58b8;
+  --c-citygross: #24939a;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-body: "Barlow", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "Noto Sans SC", system-ui, sans-serif;
+  --radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #111512; --card: #1a201c; --ink: #e7ebe6; --muted: #9aa69e; --line: #2a322c; --soft: #222a24;
+    --tag: #f2cc33; --tag-ink: #16160f; --accent: #63c48f; --accent-ink: #0c1810; --warn: #e39563;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #111512; --card: #1a201c; --ink: #e7ebe6; --muted: #9aa69e; --line: #2a322c; --soft: #222a24;
+  --tag: #f2cc33; --tag-ink: #16160f; --accent: #63c48f; --accent-ink: #0c1810; --warn: #e39563;
+  color-scheme: dark;
+}
+
+/* Leaflet 1.9.4, BSD-2-Clause */
+/* required styles */
+
+.leaflet-pane,
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-tile-container,
+.leaflet-pane > svg,
+.leaflet-pane > canvas,
+.leaflet-zoom-box,
+.leaflet-image-layer,
+.leaflet-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	}
+.leaflet-container {
+	overflow: hidden;
+	}
+.leaflet-tile,
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	        user-select: none;
+	  -webkit-user-drag: none;
+	}
+/* Prevents IE11 from highlighting tiles in blue */
+.leaflet-tile::selection {
+	background: transparent;
+}
+/* Safari renders non-retina tile on retina better with this, but Chrome is worse */
+.leaflet-safari .leaflet-tile {
+	image-rendering: -webkit-optimize-contrast;
+	}
+/* hack that prevents hw layers "stretching" when loading new tiles */
+.leaflet-safari .leaflet-tile-container {
+	width: 1600px;
+	height: 1600px;
+	-webkit-transform-origin: 0 0;
+	}
+.leaflet-marker-icon,
+.leaflet-marker-shadow {
+	display: block;
+	}
+/* .leaflet-container svg: reset svg max-width decleration shipped in Joomla! (joomla.org) 3.x */
+/* .leaflet-container img: map is broken in FF if you have max-width: 100% on tiles */
+.leaflet-container .leaflet-overlay-pane svg {
+	max-width: none !important;
+	max-height: none !important;
+	}
+.leaflet-container .leaflet-marker-pane img,
+.leaflet-container .leaflet-shadow-pane img,
+.leaflet-container .leaflet-tile-pane img,
+.leaflet-container img.leaflet-image-layer,
+.leaflet-container .leaflet-tile {
+	max-width: none !important;
+	max-height: none !important;
+	width: auto;
+	padding: 0;
+	}
+
+.leaflet-container img.leaflet-tile {
+	/* See: https://bugs.chromium.org/p/chromium/issues/detail?id=600120 */
+	mix-blend-mode: plus-lighter;
+}
+
+.leaflet-container.leaflet-touch-zoom {
+	-ms-touch-action: pan-x pan-y;
+	touch-action: pan-x pan-y;
+	}
+.leaflet-container.leaflet-touch-drag {
+	-ms-touch-action: pinch-zoom;
+	/* Fallback for FF which doesn't support pinch-zoom */
+	touch-action: none;
+	touch-action: pinch-zoom;
+}
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+	-ms-touch-action: none;
+	touch-action: none;
+}
+.leaflet-container {
+	-webkit-tap-highlight-color: transparent;
+}
+.leaflet-container a {
+	-webkit-tap-highlight-color: rgba(51, 181, 229, 0.4);
+}
+.leaflet-tile {
+	filter: inherit;
+	visibility: hidden;
+	}
+.leaflet-tile-loaded {
+	visibility: inherit;
+	}
+.leaflet-zoom-box {
+	width: 0;
+	height: 0;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	z-index: 800;
+	}
+/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
+.leaflet-overlay-pane svg {
+	-moz-user-select: none;
+	}
+
+.leaflet-pane         { z-index: 400; }
+
+.leaflet-tile-pane    { z-index: 200; }
+.leaflet-overlay-pane { z-index: 400; }
+.leaflet-shadow-pane  { z-index: 500; }
+.leaflet-marker-pane  { z-index: 600; }
+.leaflet-tooltip-pane   { z-index: 650; }
+.leaflet-popup-pane   { z-index: 700; }
+
+.leaflet-map-pane canvas { z-index: 100; }
+.leaflet-map-pane svg    { z-index: 200; }
+
+.leaflet-vml-shape {
+	width: 1px;
+	height: 1px;
+	}
+.lvml {
+	behavior: url(#default#VML);
+	display: inline-block;
+	position: absolute;
+	}
+
+
+/* control positioning */
+
+.leaflet-control {
+	position: relative;
+	z-index: 800;
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+.leaflet-top,
+.leaflet-bottom {
+	position: absolute;
+	z-index: 1000;
+	pointer-events: none;
+	}
+.leaflet-top {
+	top: 0;
+	}
+.leaflet-right {
+	right: 0;
+	}
+.leaflet-bottom {
+	bottom: 0;
+	}
+.leaflet-left {
+	left: 0;
+	}
+.leaflet-control {
+	float: left;
+	clear: both;
+	}
+.leaflet-right .leaflet-control {
+	float: right;
+	}
+.leaflet-top .leaflet-control {
+	margin-top: 10px;
+	}
+.leaflet-bottom .leaflet-control {
+	margin-bottom: 10px;
+	}
+.leaflet-left .leaflet-control {
+	margin-left: 10px;
+	}
+.leaflet-right .leaflet-control {
+	margin-right: 10px;
+	}
+
+
+/* zoom and fade animations */
+
+.leaflet-fade-anim .leaflet-popup {
+	opacity: 0;
+	-webkit-transition: opacity 0.2s linear;
+	   -moz-transition: opacity 0.2s linear;
+	        transition: opacity 0.2s linear;
+	}
+.leaflet-fade-anim .leaflet-map-pane .leaflet-popup {
+	opacity: 1;
+	}
+.leaflet-zoom-animated {
+	-webkit-transform-origin: 0 0;
+	    -ms-transform-origin: 0 0;
+	        transform-origin: 0 0;
+	}
+svg.leaflet-zoom-animated {
+	will-change: transform;
+}
+
+.leaflet-zoom-anim .leaflet-zoom-animated {
+	-webkit-transition: -webkit-transform 0.25s cubic-bezier(0,0,0.25,1);
+	   -moz-transition:    -moz-transform 0.25s cubic-bezier(0,0,0.25,1);
+	        transition:         transform 0.25s cubic-bezier(0,0,0.25,1);
+	}
+.leaflet-zoom-anim .leaflet-tile,
+.leaflet-pan-anim .leaflet-tile {
+	-webkit-transition: none;
+	   -moz-transition: none;
+	        transition: none;
+	}
+
+.leaflet-zoom-anim .leaflet-zoom-hide {
+	visibility: hidden;
+	}
+
+
+/* cursors */
+
+.leaflet-interactive {
+	cursor: pointer;
+	}
+.leaflet-grab {
+	cursor: -webkit-grab;
+	cursor:    -moz-grab;
+	cursor:         grab;
+	}
+.leaflet-crosshair,
+.leaflet-crosshair .leaflet-interactive {
+	cursor: crosshair;
+	}
+.leaflet-popup-pane,
+.leaflet-control {
+	cursor: auto;
+	}
+.leaflet-dragging .leaflet-grab,
+.leaflet-dragging .leaflet-grab .leaflet-interactive,
+.leaflet-dragging .leaflet-marker-draggable {
+	cursor: move;
+	cursor: -webkit-grabbing;
+	cursor:    -moz-grabbing;
+	cursor:         grabbing;
+	}
+
+/* marker & overlays interactivity */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.leaflet-image-layer,
+.leaflet-pane > svg path,
+.leaflet-tile-container {
+	pointer-events: none;
+	}
+
+.leaflet-marker-icon.leaflet-interactive,
+.leaflet-image-layer.leaflet-interactive,
+.leaflet-pane > svg path.leaflet-interactive,
+svg.leaflet-image-layer.leaflet-interactive path {
+	pointer-events: visiblePainted; /* IE 9-10 doesn't have auto */
+	pointer-events: auto;
+	}
+
+/* visual tweaks */
+
+.leaflet-container {
+	background: #ddd;
+	outline-offset: 1px;
+	}
+.leaflet-container a {
+	color: #0078A8;
+	}
+.leaflet-zoom-box {
+	border: 2px dotted #38f;
+	background: rgba(255,255,255,0.5);
+	}
+
+
+/* general typography */
+.leaflet-container {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1.5;
+	}
+
+
+/* general toolbar styles */
+
+.leaflet-bar {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+	border-radius: 4px;
+	}
+.leaflet-bar a {
+	background-color: #fff;
+	border-bottom: 1px solid #ccc;
+	width: 26px;
+	height: 26px;
+	line-height: 26px;
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	}
+.leaflet-bar a,
+.leaflet-control-layers-toggle {
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	display: block;
+	}
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+	background-color: #f4f4f4;
+	}
+.leaflet-bar a:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	}
+.leaflet-bar a:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+	border-bottom: none;
+	}
+.leaflet-bar a.leaflet-disabled {
+	cursor: default;
+	background-color: #f4f4f4;
+	color: #bbb;
+	}
+
+.leaflet-touch .leaflet-bar a {
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	}
+.leaflet-touch .leaflet-bar a:first-child {
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	}
+.leaflet-touch .leaflet-bar a:last-child {
+	border-bottom-left-radius: 2px;
+	border-bottom-right-radius: 2px;
+	}
+
+/* zoom control */
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+	font: bold 18px 'Lucida Console', Monaco, monospace;
+	text-indent: 1px;
+	}
+
+.leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {
+	font-size: 22px;
+	}
+
+
+/* layers control */
+
+.leaflet-control-layers {
+	box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+	background: #fff;
+	border-radius: 5px;
+	}
+.leaflet-control-layers-toggle {
+	background-image: url(images/layers.png);
+	width: 36px;
+	height: 36px;
+	}
+.leaflet-retina .leaflet-control-layers-toggle {
+	background-image: url(images/layers-2x.png);
+	background-size: 26px 26px;
+	}
+.leaflet-touch .leaflet-control-layers-toggle {
+	width: 44px;
+	height: 44px;
+	}
+.leaflet-control-layers .leaflet-control-layers-list,
+.leaflet-control-layers-expanded .leaflet-control-layers-toggle {
+	display: none;
+	}
+.leaflet-control-layers-expanded .leaflet-control-layers-list {
+	display: block;
+	position: relative;
+	}
+.leaflet-control-layers-expanded {
+	padding: 6px 10px 6px 6px;
+	color: #333;
+	background: #fff;
+	}
+.leaflet-control-layers-scrollbar {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	padding-right: 5px;
+	}
+.leaflet-control-layers-selector {
+	margin-top: 2px;
+	position: relative;
+	top: 1px;
+	}
+.leaflet-control-layers label {
+	display: block;
+	font-size: 13px;
+	font-size: 1.08333em;
+	}
+.leaflet-control-layers-separator {
+	height: 0;
+	border-top: 1px solid #ddd;
+	margin: 5px -10px 5px -6px;
+	}
+
+/* Default icon URLs */
+.leaflet-default-icon-path { /* used only in path-guessing heuristic, see L.Icon.Default */
+	background-image: url(images/marker-icon.png);
+	}
+
+
+/* attribution and scale controls */
+
+.leaflet-container .leaflet-control-attribution {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+	margin: 0;
+	}
+.leaflet-control-attribution,
+.leaflet-control-scale-line {
+	padding: 0 5px;
+	color: #333;
+	line-height: 1.4;
+	}
+.leaflet-control-attribution a {
+	text-decoration: none;
+	}
+.leaflet-control-attribution a:hover,
+.leaflet-control-attribution a:focus {
+	text-decoration: underline;
+	}
+.leaflet-attribution-flag {
+	display: inline !important;
+	vertical-align: baseline !important;
+	width: 1em;
+	height: 0.6669em;
+	}
+.leaflet-left .leaflet-control-scale {
+	margin-left: 5px;
+	}
+.leaflet-bottom .leaflet-control-scale {
+	margin-bottom: 5px;
+	}
+.leaflet-control-scale-line {
+	border: 2px solid #777;
+	border-top: none;
+	line-height: 1.1;
+	padding: 2px 5px 1px;
+	white-space: nowrap;
+	-moz-box-sizing: border-box;
+	     box-sizing: border-box;
+	background: rgba(255, 255, 255, 0.8);
+	text-shadow: 1px 1px #fff;
+	}
+.leaflet-control-scale-line:not(:first-child) {
+	border-top: 2px solid #777;
+	border-bottom: none;
+	margin-top: -2px;
+	}
+.leaflet-control-scale-line:not(:first-child):not(:last-child) {
+	border-bottom: 2px solid #777;
+	}
+
+.leaflet-touch .leaflet-control-attribution,
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+	box-shadow: none;
+	}
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+	border: 2px solid rgba(0,0,0,0.2);
+	background-clip: padding-box;
+	}
+
+
+/* popup */
+
+.leaflet-popup {
+	position: absolute;
+	text-align: center;
+	margin-bottom: 20px;
+	}
+.leaflet-popup-content-wrapper {
+	padding: 1px;
+	text-align: left;
+	border-radius: 12px;
+	}
+.leaflet-popup-content {
+	margin: 13px 24px 13px 20px;
+	line-height: 1.3;
+	font-size: 13px;
+	font-size: 1.08333em;
+	min-height: 1px;
+	}
+.leaflet-popup-content p {
+	margin: 17px 0;
+	margin: 1.3em 0;
+	}
+.leaflet-popup-tip-container {
+	width: 40px;
+	height: 20px;
+	position: absolute;
+	left: 50%;
+	margin-top: -1px;
+	margin-left: -20px;
+	overflow: hidden;
+	pointer-events: none;
+	}
+.leaflet-popup-tip {
+	width: 17px;
+	height: 17px;
+	padding: 1px;
+
+	margin: -10px auto 0;
+	pointer-events: auto;
+
+	-webkit-transform: rotate(45deg);
+	   -moz-transform: rotate(45deg);
+	    -ms-transform: rotate(45deg);
+	        transform: rotate(45deg);
+	}
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+	background: white;
+	color: #333;
+	box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+	}
+.leaflet-container a.leaflet-popup-close-button {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: none;
+	text-align: center;
+	width: 24px;
+	height: 24px;
+	font: 16px/24px Tahoma, Verdana, sans-serif;
+	color: #757575;
+	text-decoration: none;
+	background: transparent;
+	}
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+	color: #585858;
+	}
+.leaflet-popup-scrolled {
+	overflow: auto;
+	}
+
+.leaflet-oldie .leaflet-popup-content-wrapper {
+	-ms-zoom: 1;
+	}
+.leaflet-oldie .leaflet-popup-tip {
+	width: 24px;
+	margin: 0 auto;
+
+	-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678)";
+	filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.70710678, M12=0.70710678, M21=-0.70710678, M22=0.70710678);
+	}
+
+.leaflet-oldie .leaflet-control-zoom,
+.leaflet-oldie .leaflet-control-layers,
+.leaflet-oldie .leaflet-popup-content-wrapper,
+.leaflet-oldie .leaflet-popup-tip {
+	border: 1px solid #999;
+	}
+
+
+/* div icon */
+
+.leaflet-div-icon {
+	background: #fff;
+	border: 1px solid #666;
+	}
+
+
+/* Tooltip */
+/* Base styles for the element that has a tooltip */
+.leaflet-tooltip {
+	position: absolute;
+	padding: 6px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	border-radius: 3px;
+	color: #222;
+	white-space: nowrap;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+	}
+.leaflet-tooltip.leaflet-interactive {
+	cursor: pointer;
+	pointer-events: auto;
+	}
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+	position: absolute;
+	pointer-events: none;
+	border: 6px solid transparent;
+	background: transparent;
+	content: "";
+	}
+
+/* Directions */
+
+.leaflet-tooltip-bottom {
+	margin-top: 6px;
+}
+.leaflet-tooltip-top {
+	margin-top: -6px;
+}
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-top:before {
+	left: 50%;
+	margin-left: -6px;
+	}
+.leaflet-tooltip-top:before {
+	bottom: 0;
+	margin-bottom: -12px;
+	border-top-color: #fff;
+	}
+.leaflet-tooltip-bottom:before {
+	top: 0;
+	margin-top: -12px;
+	margin-left: -6px;
+	border-bottom-color: #fff;
+	}
+.leaflet-tooltip-left {
+	margin-left: -6px;
+}
+.leaflet-tooltip-right {
+	margin-left: 6px;
+}
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+	top: 50%;
+	margin-top: -6px;
+	}
+.leaflet-tooltip-left:before {
+	right: 0;
+	margin-right: -12px;
+	border-left-color: #fff;
+	}
+.leaflet-tooltip-right:before {
+	left: 0;
+	margin-left: -12px;
+	border-right-color: #fff;
+	}
+
+/* Printing */
+
+@media print {
+	/* Prevent printers from removing background-images of controls. */
+	.leaflet-control {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
+		}
+	}
+
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.45; }
+.wrap { max-width: 760px; margin: 0 auto; padding-inline: 16px; padding-block: 12px 48px; }
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[hidden] { display: none !important; }
+
+/* top line */
+.meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; padding-bottom: 10px; }
+.meta b { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--ink); letter-spacing: .02em; }
+
+/* map */
+.mapbox { margin-bottom: 4px; }
+.maphead { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--muted); padding: 0 2px 6px; }
+.maphead button { border: 0; background: none; color: var(--accent); font-size: 13px; padding: 2px 0; }
+#map { height: 240px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--soft); overflow: hidden; z-index: 0; }
+.leaflet-container { font-family: var(--font-body); }
+.leaflet-popup-content { margin: 10px 12px; font-size: 13px; line-height: 1.4; }
+.leaflet-popup-content b { font-size: 14px; }
+.leaflet-popup-content button { margin-top: 6px; border: 0; border-radius: 6px; background: var(--accent); color: var(--accent-ink); padding: 4px 10px; font-size: 13px; }
+.leaflet-tooltip.home-label { font-weight: 600; }
+
+/* sticky filters */
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); padding-block: 8px; border-bottom: 1px solid var(--line); display: grid; gap: 8px; }
+.search { display: flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 0 12px; }
+.search svg { flex: none; color: var(--muted); }
+.search input { flex: 1; min-width: 0; border: 0; background: transparent; padding: 10px 0; font-size: 16px; outline: none; }
+.search input::placeholder { color: var(--muted); }
+.chips { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 5px 11px; font-size: 13px; white-space: nowrap; }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip .km { opacity: .75; font-variant-numeric: tabular-nums; }
+.chip.off { opacity: .55; }
+.dot { width: 9px; height: 9px; border-radius: 2px; background: var(--c, var(--muted)); flex: none; display: inline-block; }
+.chip[aria-pressed="true"] .dot { box-shadow: 0 0 0 1.5px var(--accent-ink); }
+.tools { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; color: var(--muted); }
+.tools select { border: 1px solid var(--line); background: var(--card); border-radius: 8px; padding: 5px 8px; font-size: 13px; }
+.count { font-variant-numeric: tabular-nums; }
+
+/* list */
+.group { margin-top: 18px; scroll-margin-top: 150px; }
+.ghead { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; padding: 0 2px 8px; }
+.ghead h2 { margin: 0; font-size: 17px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.ghead .dot { width: 11px; height: 11px; }
+.gmeta { color: var(--muted); font-size: 12.5px; font-variant-numeric: tabular-nums; }
+.ghead a { color: var(--muted); font-size: 12.5px; margin-left: auto; }
+.note { margin: 0; font-size: 13px; color: var(--warn); padding: 10px 12px; background: var(--card); border: 1px dashed var(--line); border-radius: var(--radius); }
+.items { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.item { border-top: 1px solid var(--line); }
+.item:first-child { border-top: 0; }
+.row { width: 100%; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 12px; border: 0; background: none; text-align: left; }
+.thumb { width: 56px; height: 56px; border-radius: 8px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.thumb img { width: 100%; height: 100%; object-fit: contain; }
+.thumb .ph { font-size: 12px; color: #7d887f; }
+.thumb.none { background: var(--soft); }
+.thumb.none img { display: none; }
+.info { min-width: 0; display: grid; gap: 1px; }
+.zh { font-weight: 600; font-size: 15.5px; overflow-wrap: anywhere; }
+.sv { font-size: 13.5px; font-weight: 500; overflow-wrap: anywhere; }
+.sv::before { content: "SE"; font-size: 9.5px; font-weight: 600; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: 0 3px; margin-right: 6px; vertical-align: 2px; }
+.brand { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
+.where { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+
+.tag { justify-self: end; text-align: right; min-width: 84px; background: var(--tag); color: var(--tag-ink); border-radius: 6px; padding: 4px 8px 5px; position: relative; }
+.tag::before { content: ""; position: absolute; left: 5px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%; background: var(--paper); }
+.deal { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.05; letter-spacing: .01em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.deal small { font-size: 13px; font-weight: 600; }
+.deal.text { font-size: 15px; white-space: normal; max-width: 120px; }
+.unit { font-size: 11.5px; font-variant-numeric: tabular-nums; opacity: .8; white-space: nowrap; }
+
+/* expanded item */
+.more { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 14px; padding: 4px 12px 14px; }
+.more .big { width: 100%; aspect-ratio: 1; max-width: 100%; border-radius: 10px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
+.more .big img { width: 100%; height: 100%; object-fit: contain; }
+.more .big.none { background: var(--soft); color: var(--muted); font-size: 13px; }
+.more .big.none img { display: none; }
+.more dl { margin: 0; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; font-size: 13.5px; align-content: start; }
+.more dt { color: var(--muted); }
+.more dd { margin: 0; overflow-wrap: anywhere; }
+.more dd.sv-big { font-size: 16px; font-weight: 600; }
+.item.open { background: var(--soft); }
+.empty { text-align: center; color: var(--muted); padding: 40px 12px; }
+
+footer { margin-top: 28px; font-size: 12.5px; color: var(--muted); display: grid; gap: 6px; }
+footer p { margin: 0; max-width: 65ch; }
+footer a { color: inherit; }
+
+@media (prefers-reduced-motion: no-preference) { .chip { transition: background-color .15s, color .15s; } }
+@media (max-width: 480px) {
+  .row { grid-template-columns: 48px minmax(0, 1fr) auto; gap: 10px; padding: 9px 10px; }
+  .thumb { width: 48px; height: 48px; }
+  .tag { min-width: 72px; }
+  .deal { font-size: 19px; }
+  .more { grid-template-columns: 1fr; }
+  .more .big { max-width: 260px; justify-self: center; width: 100%; }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <div class="meta" id="meta"><b>第 – 周</b><span>正在读取…</span></div>
+
+  <section class="mapbox" id="mapbox" hidden>
+    <div class="maphead"><span>点地图上的店，只看这家的优惠</span><button type="button" id="mapToggle">收起地图</button></div>
+    <div id="map" role="region" aria-label="超市位置地图"></div>
+  </section>
+
+  <div class="bar">
+    <label class="search" for="q">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="搜鸡胸、咖啡、Marabou，或 kyckling" autocomplete="off">
+    </label>
+    <div class="chips" id="stores" role="group" aria-label="超市"></div>
+    <div class="chips" id="cats" role="group" aria-label="分类"></div>
+    <div class="tools">
+      <span class="count" id="count"></span>
+      <label>排序
+        <select id="sort">
+          <option value="dist">按距离（分店显示）</option>
+          <option value="unit">按单价</option>
+          <option value="name">按名称</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <main id="list"><p class="empty">正在读取各家超市的优惠…</p></main>
+
+  <footer>
+    <p>点一条优惠可以看大图和完整信息。带 SE 标记的是店里价签上的瑞典语名称，照着找就行。</p>
+    <p>优惠和商品图片来自 <a href="https://matpriskollen.se" target="_blank" rel="noopener">Matpriskollen</a>，每天早上自动更新。地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors。距离是到 Vallastaden 的直线距离。</p>
+    <p>部分优惠只限会员（ICA-kort、Coop 会员、Willys Plus 等）或有限购，以店内价签为准。中文名是自动翻译，约等于的单价按包装规格估算，仅供比价参考。</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+(() => {
+  const CATS = [["ALL","全部"],["FRUKT","果蔬"],["KOTT","肉·鱼"],["MEJERI","奶·蛋"],["BROD","面包"],["SKAFFERI","干货·调料"],["FRYST","冷冻·即食"],["DRYCK","饮料"],["GODIS","零食·甜品"],["HUSHALL","日用·其他"]];
+  const CAT_NAME = Object.fromEntries(CATS);
+  const CAT_SHORT = { FRUKT: "果蔬", KOTT: "肉鱼", MEJERI: "奶蛋", BROD: "面包", SKAFFERI: "干货", FRYST: "冷冻", DRYCK: "饮料", GODIS: "零食", HUSHALL: "日用" };
+  const CAT_ORDER = Object.fromEntries(CATS.map((c, i) => [c[0], i]));
+  const CHAIN = { "ICA": "--c-ica", "Coop": "--c-coop", "Willys": "--c-willys", "Hemköp": "--c-hemkop", "Lidl": "--c-lidl", "City Gross": "--c-citygross" };
+  const IMG = (id, size) => `https://mpk-product-images.s3.eu-north-1.amazonaws.com/${id}/${size}.jpeg`;
+  const $ = (id) => document.getElementById(id);
+
+  const ls = {
+    get(k, d) { try { const v = localStorage.getItem("lkpg-deals:" + k); return v ? JSON.parse(v) : d; } catch (e) { return d; } },
+    set(k, v) { try { localStorage.setItem("lkpg-deals:" + k, JSON.stringify(v)); } catch (e) {} }
+  };
+
+  const state = { q: "", cat: "ALL", sort: ls.get("sort", "dist"), off: new Set(ls.get("off", [])) };
+  let STORES = [], ITEMS = [], BYID = {}, GEO = null;
+
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const norm = (s) => String(s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  const num = (s) => parseFloat(String(s).replace(/\s/g, "").replace(",", "."));
+  const kr = (v, d = 2) => v.toFixed(d).replace(".", ",");
+  const cssVar = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  const dot = (chain) => `<i class="dot" style="--c: var(${CHAIN[chain] || "--muted"})"></i>`;
+
+  function tagText(price) {
+    const t = price.replace(/^Från\s+/i, "från ");
+    return esc(t).replace(/(\d+),00(?!\d)/g, "$1:-").replace(/\/(kg|hg|st|frp|l)\b/g, "<small>/$1</small>");
+  }
+
+  function packSize(brand) {
+    const b = String(brand || "").replace(/,(\d)/g, ".$1");
+    const conv = { g: [.001, "kg"], kg: [1, "kg"], ml: [.001, "l"], cl: [.01, "l"], dl: [.1, "l"], l: [1, "l"] };
+    let m = b.match(/(\d+)\s*x\s*(\d+(?:\.\d+)?)\s*(kg|g|ml|cl|dl|l)\b/i);
+    if (m) { const c = conv[m[3].toLowerCase()]; const q = +m[1] * +m[2] * c[0]; return { lo: q, hi: q, u: c[1] }; }
+    m = b.match(/(\d+(?:\.\d+)?)(?:\s*-\s*(\d+(?:\.\d+)?))?\s*(kg|g|ml|cl|dl|l)\b/i);
+    if (m) { const c = conv[m[3].toLowerCase()]; const lo = +m[1] * c[0], hi = (m[2] ? +m[2] : +m[1]) * c[0]; return { lo, hi, u: c[1] }; }
+    return null;
+  }
+
+  function unitInfo(price, brand) {
+    const p = String(price);
+    let each = null, perKg = null, packDeal = false;
+    let m = p.match(/köp\s*(\d+)\s*betala\s*för\s*(\d+)/i);
+    if (m) return { label: `买 ${m[1]} 付 ${m[2]}`, key: Infinity };
+    m = p.match(/(\d+)\s*för\s*(\d[\d\s]*(?:[.,]\d+)?)/i);
+    if (m) {
+      packDeal = new RegExp("(^|\\D)" + m[1] + "\\s*x\\s*\\d", "i").test(String(brand || ""));
+      each = packDeal ? num(m[2]) : num(m[2]) / +m[1];
+    } else if ((m = p.match(/(\d[\d\s]*(?:[.,]\d+)?)\s*\/\s*(kg|hg|st|frp|l)\b/i))) {
+      const v = num(m[1]), u = m[2].toLowerCase();
+      if (u === "kg") perKg = v; else if (u === "hg") perKg = v * 10; else if (u === "l") return { label: "", key: v };
+      else each = v;
+    }
+    if (perKg != null) return { label: /\/hg/i.test(p) ? `≈ ${kr(perKg, 0)} kr/kg` : "", key: perKg };
+    if (each == null || !isFinite(each)) return { label: "", key: Infinity };
+    const s = packSize(brand);
+    if (s && s.lo > 0) {
+      const a = each / s.hi, b = each / s.lo, d = b < 20 ? 1 : 0;
+      const rng = Math.abs(b - a) / a > 0.04 ? `${kr(a, d)}–${kr(b, d)}` : kr((a + b) / 2, d);
+      const multi = /\d\s*för/i.test(p) && !packDeal ? `每件 ${kr(each)} · ` : "";
+      return { label: `${multi}≈ ${rng} kr/${s.u}`, key: (a + b) / 2 };
+    }
+    return { label: /för/i.test(p) ? `每件 ${kr(each)} kr` : "", key: each };
+  }
+
+  // "Ben & Jerry's 冰淇淋": brand from the size field + Chinese product type
+  function displayName(it) {
+    const raw = String(it.b || "").split(",")[0].trim();
+    let brand = "";
+    if (/^butiksbakat$/i.test(raw)) brand = "店内现烤";
+    else if (/^manuella disken$/i.test(raw)) brand = "柜台";
+    else if (raw && !/\d/.test(raw) && raw !== "-") brand = raw;
+    const zh = it.zh || "";
+    if (!zh) return brand ? `${brand} ${it.p}` : it.p;
+    if (brand && !zh.toLowerCase().includes(brand.toLowerCase())) return `${brand} ${zh}`;
+    return zh;
+  }
+
+  function km(a, b) {
+    const R = 6371, r = Math.PI / 180;
+    const dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+    const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
+    return 2 * R * Math.asin(Math.sqrt(h));
+  }
+
+  function isoWeek(d) {
+    const t = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+    const day = t.getUTCDay() || 7; t.setUTCDate(t.getUTCDate() + 4 - day);
+    const y0 = new Date(Date.UTC(t.getUTCFullYear(), 0, 1));
+    return Math.ceil(((t - y0) / 864e5 + 1) / 7);
+  }
+  function when(iso) {
+    if (!iso) return "";
+    const d = new Date(iso); if (isNaN(d)) return "";
+    const p = (n) => String(n).padStart(2, "0");
+    return `${d.getMonth() + 1}月${d.getDate()}日 ${p(d.getHours())}:${p(d.getMinutes())}`;
+  }
+
+  function init(data, geo) {
+    GEO = geo && geo.home && geo.home.lat != null ? geo : null;
+    STORES = (data.stores || []).map((s) => {
+      const g = GEO && GEO.stores && GEO.stores[s.id];
+      return g ? { ...s, lat: g.lat, lon: g.lon, km: Math.round(km(GEO.home, g) * 10) / 10 } : { ...s };
+    }).sort((a, b) => (a.km ?? 99) - (b.km ?? 99));
+    BYID = Object.fromEntries(STORES.map((s) => [s.id, s]));
+    ITEMS = [];
+    STORES.forEach((s) => (s.items || []).forEach((r) => {
+      const [p, b, pr, c, zh, img] = r;
+      const it = { sid: s.id, p, b, pr, c, zh, img: img || "", u: unitInfo(pr, b) };
+      it.name = displayName(it);
+      it.key = norm([p, b, zh, it.name].join(" "));
+      ITEMS.push(it);
+    }));
+    const d = new Date(data.updated_at);
+    const total = ITEMS.length;
+    $("meta").innerHTML = `<b>第 ${isNaN(d) ? "–" : isoWeek(d)} 周</b><span>更新于 ${esc(when(data.updated_at))}</span><span>${STORES.length} 家超市 · ${total} 条优惠</span>`;
+    $("sort").value = state.sort;
+    renderChips(); render(); initMap();
+  }
+
+  function renderChips() {
+    const allOn = state.off.size === 0;
+    $("stores").innerHTML = `<button class="chip" type="button" data-store="*" aria-pressed="${allOn}">全部超市</button>` +
+      STORES.map((s) => {
+        const on = !state.off.has(s.id);
+        const n = (s.items || []).length;
+        return `<button class="chip${n ? "" : " off"}" type="button" data-store="${esc(s.id)}" aria-pressed="${on && !allOn}">${dot(s.chain)}${esc(s.name)} <span class="km">${s.km != null ? kr(s.km, 1) + " km" : ""}</span></button>`;
+      }).join("");
+    $("cats").innerHTML = CATS.map(([k, label]) => `<button class="chip" type="button" data-cat="${k}" aria-pressed="${state.cat === k}">${label}</button>`).join("");
+  }
+
+  function visible() {
+    const q = norm(state.q.trim());
+    const terms = q ? q.split(/\s+/) : [];
+    return ITEMS.filter((it) => !state.off.has(it.sid) && (state.cat === "ALL" || it.c === state.cat) && terms.every((t) => it.key.includes(t)));
+  }
+
+  function thumb(it) {
+    const ph = `<span class="ph">${CAT_SHORT[it.c] || ""}</span>`;
+    if (!it.img) return `<span class="thumb none">${ph}</span>`;
+    return `<span class="thumb"><img src="${IMG(it.img, "thumb100p")}" alt="" loading="lazy" decoding="async"></span>`;
+  }
+
+  function row(it, idx, showStore) {
+    const s = BYID[it.sid];
+    const isText = !/\d/.test(it.pr) || it.pr.length > 14;
+    const where = showStore ? `<span class="where">${dot(s.chain)}${esc(s.name)} · ${kr(s.km, 1)} km</span>` : "";
+    return `<div class="item" data-i="${idx}">
+      <button class="row" type="button" aria-expanded="false">
+        ${thumb(it)}
+        <span class="info">
+          <span class="zh">${esc(it.name)}</span>
+          <span class="sv">${esc(it.p)}</span>
+          ${it.b ? `<span class="brand">${esc(it.b)}</span>` : ""}
+          ${where}
+        </span>
+        <span class="tag"><span class="deal${isText ? " text" : ""}">${tagText(it.pr)}</span>${it.u.label ? `<span class="unit" style="display:block">${esc(it.u.label)}</span>` : ""}</span>
+      </button>
+    </div>`;
+  }
+
+  function moreHtml(it) {
+    const s = BYID[it.sid];
+    const big = it.img
+      ? `<div class="big"><img src="${IMG(it.img, "thumb300p")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
+      : `<div class="big none">没有图片</div>`;
+    return `<div class="more">${big}<dl>
+      <dt>店内名</dt><dd class="sv-big">${esc(it.p)}</dd>
+      ${it.b ? `<dt>品牌规格</dt><dd>${esc(it.b)}</dd>` : ""}
+      <dt>特价</dt><dd>${esc(it.pr)}${it.u.label ? `（${esc(it.u.label)}）` : ""}</dd>
+      ${it.zh ? `<dt>中文</dt><dd>${esc(it.zh)}</dd>` : ""}
+      <dt>分类</dt><dd>${esc(CAT_NAME[it.c] || "")}</dd>
+      <dt>超市</dt><dd>${esc(s.name)} · ${kr(s.km, 1)} km${s.address ? " · " + esc(s.address) : ""}</dd>
+    </dl></div>`;
+  }
+
+  function render() {
+    const list = visible();
+    const filtered = state.q.trim() || state.cat !== "ALL";
+    $("count").textContent = `共 ${list.length} 条优惠`;
+    let html = "";
+    if (state.sort === "dist") {
+      for (const s of STORES) {
+        if (state.off.has(s.id)) continue;
+        const its = list.filter((it) => it.sid === s.id)
+          .sort((a, b) => (CAT_ORDER[a.c] - CAT_ORDER[b.c]) || a.p.localeCompare(b.p, "sv"));
+        const n = (s.items || []).length;
+        if (!its.length && (filtered || n)) continue;
+        const status = s.status === "stale" ? ` · 数据为 ${esc(when(s.fetched_at))}` : "";
+        html += `<section class="group" id="g-${esc(s.id)}">
+          <div class="ghead"><h2>${dot(s.chain)}${esc(s.name)}</h2>
+            <span class="gmeta">${kr(s.km, 1)} km · ${esc(s.address || "")} · ${n} 条${status}</span>
+            <a href="${esc(s.source)}" target="_blank" rel="noopener">原页面 ↗</a></div>
+          ${its.length ? `<div class="items">${its.map((it) => row(it, ITEMS.indexOf(it), false)).join("")}</div>`
+                       : `<p class="note">这家店的优惠还没抓到，下次自动更新时会再试。</p>`}
+        </section>`;
+      }
+    } else {
+      const sorted = list.slice().sort(state.sort === "unit"
+        ? (a, b) => (a.u.key - b.u.key) || (BYID[a.sid].km - BYID[b.sid].km)
+        : (a, b) => a.name.localeCompare(b.name, "zh") || (BYID[a.sid].km - BYID[b.sid].km));
+      if (sorted.length) html = `<div class="group"><div class="items">${sorted.map((it) => row(it, ITEMS.indexOf(it), true)).join("")}</div></div>`;
+    }
+    $("list").innerHTML = html || `<p class="empty">没有符合条件的优惠。换个关键词，或者多选几家超市试试。</p>`;
+  }
+
+  // map
+  let map = null;
+  function initMap() {
+    if (!GEO || !window.L || map) return;
+    const pts = STORES.filter((s) => s.lat != null);
+    if (!pts.length) return;
+    $("mapbox").hidden = false;
+    const collapsed = ls.get("mapCollapsed", false);
+    map = L.map("map", { scrollWheelZoom: false, attributionControl: true, zoomControl: true });
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 18, attribution: "© OpenStreetMap" }).addTo(map);
+    const home = [GEO.home.lat, GEO.home.lon];
+    L.circleMarker(home, { radius: 8, color: "#fff", weight: 2, fillColor: cssVar("--ink") || "#18201b", fillOpacity: 1 })
+      .addTo(map).bindTooltip(GEO.home.name || "Vallastaden", { permanent: true, direction: "right", offset: [8, 0], className: "home-label" });
+    for (const s of pts) {
+      const color = cssVar(CHAIN[s.chain]) || "#666";
+      const n = (s.items || []).length;
+      L.circleMarker([s.lat, s.lon], { radius: 9, color: "#fff", weight: 2, fillColor: color, fillOpacity: 1 })
+        .addTo(map)
+        .bindTooltip(`${s.name} · ${kr(s.km, 1)} km`, { direction: "top", offset: [0, -8] })
+        .bindPopup(`<b>${esc(s.name)}</b><br>${kr(s.km, 1)} km · ${n} 条优惠<br><button type="button" data-only="${esc(s.id)}">只看这家</button>`);
+    }
+    map.fitBounds(L.latLngBounds([home, ...pts.map((s) => [s.lat, s.lon])]), { padding: [24, 24] });
+    if (collapsed) setMap(false);
+  }
+  function setMap(open) {
+    $("map").hidden = !open;
+    $("mapToggle").textContent = open ? "收起地图" : "展开地图";
+    ls.set("mapCollapsed", !open);
+    if (open && map) setTimeout(() => map.invalidateSize(), 0);
+  }
+  $("mapToggle").addEventListener("click", () => setMap($("map").hidden));
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-only]"); if (!b) return;
+    const id = b.dataset.only;
+    state.off = new Set(STORES.map((s) => s.id).filter((x) => x !== id));
+    ls.set("off", [...state.off]); renderChips(); render();
+    if (map) map.closePopup();
+    const g = document.getElementById("g-" + id);
+    if (g) g.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  // images that fail: fall back once, then show the placeholder
+  document.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.dataset.fallback) { const f = img.dataset.fallback; delete img.dataset.fallback; img.src = f; return; }
+    const box = img.parentElement;
+    if (box) { box.classList.add("none"); if (box.classList.contains("big")) box.textContent = "没有图片"; }
+  }, true);
+
+  // events
+  $("q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+  $("sort").addEventListener("change", (e) => { state.sort = e.target.value; ls.set("sort", state.sort); render(); });
+  $("stores").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-store]"); if (!b) return;
+    const id = b.dataset.store;
+    if (id === "*") state.off.clear();
+    else if (state.off.size === 0) { state.off = new Set(STORES.map((s) => s.id).filter((x) => x !== id)); }
+    else if (state.off.has(id)) { state.off.delete(id); }
+    else { state.off.add(id); if (state.off.size === STORES.length) state.off.clear(); }
+    ls.set("off", [...state.off]); renderChips(); render();
+  });
+  $("cats").addEventListener("click", (e) => {
+    const b = e.target.closest("[data-cat]"); if (!b) return;
+    state.cat = b.dataset.cat; renderChips(); render();
+  });
+  $("list").addEventListener("click", (e) => {
+    const btn = e.target.closest(".row"); if (!btn) return;
+    const item = btn.parentElement;
+    const it = ITEMS[+item.dataset.i]; if (!it) return;
+    const open = item.classList.toggle("open");
+    btn.setAttribute("aria-expanded", open);
+    const more = item.querySelector(".more");
+    if (open && !more) item.insertAdjacentHTML("beforeend", moreHtml(it));
+    else if (more) more.hidden = !open;
+  });
+
+  const getJSON = (u) => fetch(u, { cache: "no-store" }).then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); });
+  Promise.all([getJSON("data.json"), getJSON("geo.json").catch(() => null)])
+    .then(([data, geo]) => init(data, geo))
+    .catch(() => { $("list").innerHTML = `<p class="empty">优惠数据没有加载出来，刷新一下页面试试。</p>`; $("meta").innerHTML = `<b>第 – 周</b>`; });
+})();
+</script>
+</body>
+</html>

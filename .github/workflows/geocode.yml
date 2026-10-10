@@ -1,0 +1,19 @@
+name: Geocode stores
+on:
+  push:
+    paths: [stores.json, tools/geocode.py, .github/workflows/geocode.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  geocode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tools/geocode.py
+      - name: Commit geo.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add geo.json
+          git diff --cached --quiet || (git commit -m "Update store coordinates" && git pull --rebase && git push)

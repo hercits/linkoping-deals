@@ -1,0 +1,167 @@
+[
+ {
+  "id": "city-gross-djurgarden",
+  "name": "City Gross Djurgården",
+  "chain": "City Gross",
+  "address": "Åsmestadsgatan 8",
+  "km": 0.7,
+  "source": "https://matpriskollen.se/butiker/linkoping-djurgardsstaden--28f5be34-c0b0-471c-862e-c7087e70c51f",
+  "geo": {
+   "q": [
+    "City Gross, Åsmestadsgatan 8, Linköping",
+    "Åsmestadsgatan 8, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "coop-lambohov",
+  "name": "Coop Lambohov",
+  "chain": "Coop",
+  "address": "Tröskaregatan 33",
+  "km": 1.2,
+  "source": "https://matpriskollen.se/butiker/lambohov--504b46d4-fab0-400c-854e-0c4b554ccfd8",
+  "geo": {
+   "q": [
+    "Coop, Tröskaregatan 33, Linköping",
+    "Tröskaregatan 33, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "coop-vallaplan",
+  "name": "Coop Vallaplan",
+  "chain": "Coop",
+  "address": "Malmslättsvägen (Vallaplan)",
+  "km": 1.8,
+  "source": "https://matpriskollen.se/butiker/vallaplan--b6e42ea6-d141-44e7-b54e-b35240347c6d",
+  "geo": {
+   "q": [
+    "Coop Vallaplan, Linköping",
+    "Vallaplan, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "hemkop-ryd",
+  "name": "Hemköp Ryd",
+  "chain": "Hemköp",
+  "address": "Mårdtorpsgatan 27",
+  "km": 2.2,
+  "source": "https://matpriskollen.se/butiker/linkoping-ryd--039a3b70-9775-4719-b790-d5e0e448bfed",
+  "geo": {
+   "lat": 58.4091,
+   "lon": 15.5627,
+   "src": "Hemköp"
+  }
+ },
+ {
+  "id": "stora-coop-garnisonen",
+  "name": "Stora Coop Garnisonen",
+  "chain": "Coop",
+  "address": "Garnisonsvägen 50",
+  "km": 2.3,
+  "source": "https://matpriskollen.se/butiker/linkoping-garnisonen--27150a8a-0978-49ca-b0a7-7b1c12c9470d",
+  "geo": {
+   "q": [
+    "Stora Coop, Garnisonsvägen 50, Linköping",
+    "Garnisonsvägen 50, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "ica-nara-skolgatan",
+  "name": "ICA Nära Skolgatan",
+  "chain": "ICA",
+  "address": "Skolgatan 15",
+  "km": 2.5,
+  "source": "https://matpriskollen.se/butiker/skolgatan--97c0bfff-3b90-4f78-9396-0bf936e19fee",
+  "geo": {
+   "q": [
+    "ICA Nära Skolgatan, Linköping",
+    "Skolgatan 15, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "willys-skaggetorp",
+  "name": "Willys Skäggetorp",
+  "chain": "Willys",
+  "address": "Skäggetorps centrum",
+  "km": 3.7,
+  "source": "https://matpriskollen.se/butiker/linkoping-skaggetorp--19f80aaf-61c3-4255-95af-94d35ed2aa20",
+  "geo": {
+   "lat": 58.4263,
+   "lon": 15.5832,
+   "src": "Willys"
+  }
+ },
+ {
+  "id": "ica-maxi",
+  "name": "ICA Maxi Linköping",
+  "chain": "ICA",
+  "address": "Västra Svedengatan 12, Tornby",
+  "km": 4.4,
+  "source": "https://matpriskollen.se/butiker/linkoping--33556671-f148-412f-9aaa-4a9a918bf9a6",
+  "geo": {
+   "q": [
+    "ICA Maxi, Västra Svedengatan 12, Linköping",
+    "Västra Svedengatan 12, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "willys-tornby",
+  "name": "Willys Tornby",
+  "chain": "Willys",
+  "address": "Norra Svedengatan 20, Tornby",
+  "km": 4.6,
+  "source": "https://matpriskollen.se/butiker/linkoping-tornby--4bc6a66c-b649-40d6-ae0f-41880520930d",
+  "geo": {
+   "lat": 58.4341,
+   "lon": 15.5893,
+   "src": "Willys"
+  }
+ },
+ {
+  "id": "city-gross-tornby",
+  "name": "City Gross Tornby",
+  "chain": "City Gross",
+  "address": "Norra Svedengatan 9, Tornby",
+  "km": 4.8,
+  "source": "https://matpriskollen.se/butiker/linkoping-tornby--a91df041-32cf-4952-bbf1-ee8f34061fa3",
+  "geo": {
+   "q": [
+    "City Gross, Norra Svedengatan 9, Linköping",
+    "Norra Svedengatan 9, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "lidl-ekholmen",
+  "name": "Lidl Ekholmen",
+  "chain": "Lidl",
+  "address": "Järdalavägen 1",
+  "km": 5.6,
+  "source": "https://matpriskollen.se/butiker/ekholmen--e8e9f692-b999-4009-ad27-a631dfa9cc7a",
+  "geo": {
+   "q": [
+    "Lidl, Järdalavägen 1, Linköping",
+    "Järdalavägen 1, Linköping"
+   ]
+  }
+ },
+ {
+  "id": "ica-kvantum-signalen",
+  "name": "ICA Kvantum Signalen",
+  "chain": "ICA",
+  "address": "Ekholmens centrum",
+  "km": 5.8,
+  "source": "https://matpriskollen.se/butiker/signalen--1a8dbc0e-13af-4068-8370-5a681b699bec",
+  "geo": {
+   "q": [
+    "ICA Kvantum Signalen, Linköping",
+    "Ekholmens centrum, Linköping"
+   ]
+  }
+ }
+]

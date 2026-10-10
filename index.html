@@ -995,7 +995,7 @@ footer a { color: inherit; }
       const size = o.v || (o.s && o.s.length <= 24 && !/sorter/i.test(o.s) ? o.s : "");
       const it = {
         sid: s.id, p: o.t, br: o.br, b: [o.br, size].filter(Boolean).join(", "), size,
-        pr: o.pr, cp: o.cp, c: o.g || "HUSHALL", cat: o.cat, zh: o.zh || "", img: o.img || "",
+        pr: o.pr, cp: o.cp, c: o.g || "HUSHALL", cat: o.cat, zh: o.zh || "", img: o.img || "", imgurl: o.imgurl || "", imgsrc: o.imgsrc || "",
         sub: o.s, cond: o.cond, disc: o.disc, to: o.to, origin: o.origin, tags: o.tags || []
       };
       it.member = MEMBER.test(`${o.cond} ${o.disc}`);
@@ -1030,6 +1030,7 @@ footer a { color: inherit; }
 
   function thumb(it) {
     const ph = `<span class="ph">暂无<br>图片</span>`;
+    if (it.imgurl) return `<span class="thumb"><img src="${esc(it.imgurl)}" alt="" loading="lazy" decoding="async"></span>`;
     if (!it.img) return `<span class="thumb none">${ph}</span>`;
     return `<span class="thumb"><img src="${IMG(it.img, "thumb100p")}" srcset="${IMG(it.img, "thumb100p")} 1x, ${IMG(it.img, "full")} 2x" data-fallback="${IMG(it.img, "thumb100p")}" alt="" loading="lazy" decoding="async"></span>`;
   }
@@ -1054,9 +1055,11 @@ footer a { color: inherit; }
 
   function moreHtml(it) {
     const s = BYID[it.sid];
-    const big = it.img
+    const big = it.imgurl
+      ? `<div class="big"><img src="${esc(it.imgurl.replace("t_200", "t_500"))}" data-fallback="${esc(it.imgurl)}" alt="${esc(it.p)}"></div>`
+      : it.img
       ? `<div class="big"><img src="${IMG(it.img, "full")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
-      : `<div class="big none">没有图片</div>`;
+      : `<div class="big none">暂无图片</div>`;
     const cond = condZh(it.cond);
     return `<div class="more">${big}<dl>
       <dt>店内名</dt><dd class="sv-big">${esc(it.p)}</dd>
@@ -1068,6 +1071,7 @@ footer a { color: inherit; }
       ${it.zh ? `<dt>中文</dt><dd>${esc(it.zh)}</dd>` : ""}
       <dt>分类</dt><dd>${esc(CAT_NAME[it.c] || "")}${it.cat ? ` · ${esc(it.cat)}` : ""}</dd>
       ${it.origin ? `<dt>产地</dt><dd>${esc(it.origin)}</dd>` : ""}
+      ${it.imgsrc ? `<dt>图片</dt><dd>示意图，来自${it.imgsrc.startsWith("Willys") ? " Willys 同款（" + esc(it.imgsrc.slice(8)) + "）" : "其他门店的同款商品"}</dd>` : ""}
       <dt>超市</dt><dd>${esc(s.name)} · ${kr(s.km, 1)} km${s.address ? " · " + esc(s.address) : ""}</dd>
     </dl></div>`;
   }

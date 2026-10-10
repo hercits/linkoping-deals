@@ -5,7 +5,7 @@ Usage:
   python3 tools/scrape.py                 # fetch every store in stores.json -> data.json
   python3 tools/scrape.py --html f.html   # parse one saved page and print a summary
 """
-import argparse, json, os, re, sys, time, urllib.request
+import argparse, json, os, re, sys, time, urllib.parse, urllib.request
 from datetime import datetime, timezone, timedelta
 
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -99,6 +99,42 @@ if __name__ == "__main__":
         print("conditions:", Counter(o["cond"] for o in offers).most_common(8))
 
 
+# ---------------------------------------------------------------- reference photos from Willys' catalogue
+WORD = re.compile(r"[a-zåäöéü]{3,}")
+STOP = {"med", "och", "eko", "naturell", "original", "skivad", "skivat", "flerpack", "konserv", "pack", "refill"}
+
+
+def words(text):
+    return {w for w in WORD.findall((text or "").lower()) if w not in STOP}
+
+
+def axfood_photo(title, brand):
+    """Photo of the same product in Willys' online catalogue, or None. Brand must match and the name must overlap."""
+    if not brand or len(brand) < 2:
+        return None
+    q = f"{brand} {title.split(',')[0].split('/')[0]}".strip()
+    url = "https://www.willys.se/search?" + urllib.parse.urlencode({"q": q, "size": 12})
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            res = json.load(r).get("results") or []
+    except Exception as e:
+        print("  willys search failed:", q, e, file=sys.stderr)
+        return None
+    want = words(title)
+    b = brand.lower()
+    for p in res:
+        maker = (p.get("manufacturer") or "").lower()
+        if not maker or not (b in maker or maker in b):
+            continue
+        have = words(p.get("name", "")) | words(p.get("productLine2", ""))
+        overlap = any(w == h or (len(w) >= 5 and (w.startswith(h) or h.startswith(w))) for w in want for h in have)
+        img = (p.get("image") or {}).get("url")
+        if overlap and img:
+            return {"url": img, "name": f"{p.get('name','')} {p.get('displayVolume','')}".strip()}
+    return None
+
+
 # ---------------------------------------------------------------- daily build
 GROUPS = [  # Matpriskollen category (lowercase substring) -> page group
     ("frukt", "FRUKT"), ("grönsak", "FRUKT"),
@@ -186,6 +222,23 @@ def main():
                 o["img"], o["imgsrc"] = img, "same product in another store"
                 borrowed += 1
     print(f"borrowed {borrowed} photos from identical products in other stores", file=sys.stderr)
+
+    # Still no photo: look the product up in Willys' catalogue (reference photo, labelled as such on the page)
+    found, cache = 0, {}
+    for rec in out:
+        for o in rec["items"]:
+            if o.get("img") or o.get("imgurl"):
+                continue
+            key = (o["t"].lower(), o["br"].lower())
+            if key not in cache:
+                cache[key] = axfood_photo(o["t"], o["br"])
+                time.sleep(1)
+            hit = cache[key]
+            if hit:
+                o["imgurl"], o["imgsrc"] = hit["url"], f"Willys: {hit['name']}"
+                found += 1
+    left = sum(1 for rec in out for o in rec["items"] if not o.get("img") and not o.get("imgurl"))
+    print(f"found {found} reference photos at Willys; {left} offers still without a photo", file=sys.stderr)
 
     data = {"updated_at": now.isoformat(timespec="minutes"), "origin": "Vallastaden", "source": "Matpriskollen", "stores": out}
     with open("data.json", "w", encoding="utf-8") as f:

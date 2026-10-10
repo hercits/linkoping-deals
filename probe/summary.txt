@@ -1,8 +1,0 @@
-lidl1.json | 401  0 | https://www.lidl.se/q/api/search?assortment=SE&locale=sv_SE&version=v2.0.0&q=heinz%20ketchup
-lidl2.html | 200 text/html;charset=utf-8 335330 | https://www.lidl.se/q/search?q=heinz%20ketchup
-cg1.json | 400 application/json; charset=utf-8 33 | https://www.citygross.se/api/v1/Loop54/search?query=heinz%20ketchup
-cg2.json | 503 text/html 592 | https://www.citygross.se/api/v1/esales/search?q=heinz%20ketchup
-cg3.html | 200 text/html 33684 | https://www.citygross.se/sok?Q=heinz%20ketchup
-willys.json | 200 application/json;charset=UTF-8 13060 | https://www.willys.se/search?q=heinz%20ketchup&size=3
-hemkop.json | 200 application/json;charset=UTF-8 12025 | https://www.hemkop.se/search?q=heinz%20ketchup&size=3
-off.json | 200 application/json; charset=utf-8 175441 | https://world.openfoodfacts.org/cgi/search.pl?search_terms=heinz%20ketchup&json=1&page_size=3

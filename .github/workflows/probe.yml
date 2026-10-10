@@ -1,0 +1,20 @@
+name: Probe Axfood campaigns
+on:
+  push:
+    paths: [.github/workflows/probe.yml]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p probe
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          curl -sSL -A "$UA" "https://www.willys.se/search/campaigns/offline?q=2298&type=PERSONAL_GENERAL&page=0&size=4" -o probe/willys.json -w "willys %{http_code} %{size_download}\n"
+          curl -sSL -A "$UA" "https://www.hemkop.se/search/campaigns/offline?q=4193&type=PERSONAL_GENERAL&page=0&size=4" -o probe/hemkop.json -w "hemkop %{http_code} %{size_download}\n"
+      - run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe && git commit -m "Probe: Axfood campaigns" && git pull --rebase && git push

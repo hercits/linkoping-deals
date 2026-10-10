@@ -167,6 +167,26 @@ def main():
             failed.append(s["id"])
         out.append(rec)
 
+    # Offers without a photo: borrow the photo of the identical product (same name and brand) from another store
+    exact, by_title = {}, {}
+    for rec in out:
+        for o in rec["items"]:
+            if o.get("img"):
+                exact.setdefault((o["t"].lower(), o["br"].lower()), o["img"])
+                by_title.setdefault(o["t"].lower(), set()).add(o["img"])
+    borrowed = 0
+    for rec in out:
+        for o in rec["items"]:
+            if o.get("img"):
+                continue
+            img = exact.get((o["t"].lower(), o["br"].lower()))
+            if not img and len(by_title.get(o["t"].lower(), ())) == 1 and len(o["t"]) > 6:
+                img = next(iter(by_title[o["t"].lower()]))
+            if img:
+                o["img"], o["imgsrc"] = img, "same product in another store"
+                borrowed += 1
+    print(f"borrowed {borrowed} photos from identical products in other stores", file=sys.stderr)
+
     data = {"updated_at": now.isoformat(timespec="minutes"), "origin": "Vallastaden", "source": "Matpriskollen", "stores": out}
     with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))

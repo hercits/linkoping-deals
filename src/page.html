@@ -98,13 +98,12 @@ button { cursor: pointer; }
 .row { width: 100%; display: grid; grid-template-columns: 56px minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 10px 12px; border: 0; background: none; text-align: left; }
 .thumb { width: 56px; height: 56px; border-radius: 8px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; overflow: hidden; }
 .thumb img { width: 100%; height: 100%; object-fit: contain; }
-.thumb .ph { font-size: 12px; color: #7d887f; }
+.thumb .ph { font-size: 11px; color: #7d887f; text-align: center; line-height: 1.2; }
 .thumb.none { background: var(--soft); }
 .thumb.none img { display: none; }
-.info { min-width: 0; display: grid; gap: 1px; }
+.info { min-width: 0; display: grid; gap: 1px; justify-items: start; text-align: left; }
 .zh { font-weight: 600; font-size: 15.5px; overflow-wrap: anywhere; }
-.sv { font-size: 13.5px; font-weight: 500; overflow-wrap: anywhere; }
-.sv::before { content: "SE"; font-size: 9.5px; font-weight: 600; letter-spacing: .06em; color: var(--muted); border: 1px solid var(--line); border-radius: 3px; padding: 0 3px; margin-right: 6px; vertical-align: 2px; }
+.sv { font-size: 14px; font-weight: 500; overflow-wrap: anywhere; font-family: var(--font-body); }
 .brand { font-size: 12.5px; color: var(--muted); overflow-wrap: anywhere; }
 .where { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px; margin-top: 2px; }
 
@@ -174,7 +173,7 @@ footer a { color: inherit; }
   <main id="list"><p class="empty">正在读取各家超市的优惠…</p></main>
 
   <footer>
-    <p>点一条优惠可以看大图和完整信息。带 SE 标记的是店里价签上的瑞典语名称，照着找就行。</p>
+    <p>每条优惠第一行是品牌加中文名，第二行是和店里价签一致的瑞典语原名，第三行是品牌和规格。点开可以看大图和限购、有效期等信息。</p>
     <p>优惠和商品图片来自 <a href="https://matpriskollen.se" target="_blank" rel="noopener">Matpriskollen</a>，每天早上自动更新。地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors。距离是到 Vallastaden 的直线距离。</p>
     <p>“比价”是 Matpriskollen 给出的每公斤、每升或每件价格，方便不同包装之间比较。标了“会员”的需要会员卡，限购和有效期点开就能看到，最终以店内价签为准。中文名是翻译的，新上架的商品可能暂时只有瑞典语。</p>
   </footer>
@@ -326,7 +325,7 @@ footer a { color: inherit; }
       if (o.to && o.to < nowSec) return; // expired since the last update
       const size = o.v || (o.s && o.s.length <= 24 && !/sorter/i.test(o.s) ? o.s : "");
       const it = {
-        sid: s.id, p: o.t, br: o.br, b: [o.br, size].filter(Boolean).join(" · "), size,
+        sid: s.id, p: o.t, br: o.br, b: [o.br, size].filter(Boolean).join(", "), size,
         pr: o.pr, cp: o.cp, c: o.g || "HUSHALL", cat: o.cat, zh: o.zh || "", img: o.img || "",
         sub: o.s, cond: o.cond, disc: o.disc, to: o.to, origin: o.origin, tags: o.tags || []
       };
@@ -361,7 +360,7 @@ footer a { color: inherit; }
   }
 
   function thumb(it) {
-    const ph = `<span class="ph">${CAT_SHORT[it.c] || ""}</span>`;
+    const ph = `<span class="ph">暂无<br>图片</span>`;
     if (!it.img) return `<span class="thumb none">${ph}</span>`;
     return `<span class="thumb"><img src="${IMG(it.img, "thumb100p")}" srcset="${IMG(it.img, "thumb100p")} 1x, ${IMG(it.img, "full")} 2x" data-fallback="${IMG(it.img, "thumb100p")}" alt="" loading="lazy" decoding="async"></span>`;
   }

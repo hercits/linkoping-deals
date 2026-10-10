@@ -1,0 +1,32 @@
+name: Probe chain product search
+on:
+  push:
+    paths: [.github/workflows/probe.yml]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Try product search endpoints
+        run: |
+          mkdir -p probe
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          try() { name=$1; url=$2; code=$(curl -sSL -A "$UA" -H "Accept: application/json, text/html" -o "probe/$name" -w "%{http_code} %{content_type} %{size_download}" "$url"); echo "$name | $code | $url"; }
+          {
+          try lidl1.json "https://www.lidl.se/q/api/search?assortment=SE&locale=sv_SE&version=v2.0.0&q=heinz%20ketchup"
+          try lidl2.html "https://www.lidl.se/q/search?q=heinz%20ketchup"
+          try cg1.json "https://www.citygross.se/api/v1/Loop54/search?query=heinz%20ketchup"
+          try cg2.json "https://www.citygross.se/api/v1/esales/search?q=heinz%20ketchup"
+          try cg3.html "https://www.citygross.se/sok?Q=heinz%20ketchup"
+          try willys.json "https://www.willys.se/search?q=heinz%20ketchup&size=3"
+          try hemkop.json "https://www.hemkop.se/search?q=heinz%20ketchup&size=3"
+          try off.json "https://world.openfoodfacts.org/cgi/search.pl?search_terms=heinz%20ketchup&json=1&page_size=3"
+          } | tee probe/summary.txt
+          for f in probe/*.json probe/*.html; do echo "== $f"; head -c 700 "$f"; echo; grep -oE '"(image|imageUrl|image_url|thumbnail|images)"[^,]{0,160}' "$f" | head -3; done > probe/heads.txt 2>&1
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add probe && git commit -m "Probe: chain product search" && git pull --rebase && git push

@@ -113,6 +113,11 @@ button { cursor: pointer; }
 .deal small { font-size: 13px; font-weight: 600; }
 .deal.text { font-size: 15px; white-space: normal; max-width: 120px; }
 .unit { font-size: 11.5px; font-variant-numeric: tabular-nums; opacity: .8; white-space: nowrap; }
+.chk { font-size: 12px; font-weight: 600; margin-top: 2px; }
+.chk.ok { color: var(--accent); }
+.chk.no { color: var(--warn); font-weight: 500; }
+.save { display: block; font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+.only { display: inline-flex; align-items: center; gap: 5px; margin-right: auto; margin-left: 12px; }
 .mem { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: .04em; margin-bottom: 1px; }
 
 /* expanded item */
@@ -160,6 +165,7 @@ footer a { color: inherit; }
     <div class="chips" id="cats" role="group" aria-label="分类"></div>
     <div class="tools">
       <span class="count" id="count"></span>
+      <label class="only"><input type="checkbox" id="onlyOk"> 只看已核实降价</label>
       <label>排序
         <select id="sort">
           <option value="dist">按距离（分店显示）</option>
@@ -175,7 +181,7 @@ footer a { color: inherit; }
   <footer>
     <p>每条优惠第一行是品牌加中文名，第二行是和店里价签一致的瑞典语原名，第三行是品牌和规格。点开可以看大图和限购、有效期等信息。</p>
     <p>优惠和商品图片来自 <a href="https://matpriskollen.se" target="_blank" rel="noopener">Matpriskollen</a>，每天早上自动更新。地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors。距离是到 Vallastaden 的直线距离。</p>
-    <p>“比价”是 Matpriskollen 给出的每公斤、每升或每件价格，方便不同包装之间比较。标了“会员”的需要会员卡，限购和有效期点开就能看到，最终以店内价签为准。中文名是翻译的，新上架的商品可能暂时只有瑞典语。</p>
+    <p>Willys 和 Hemköp 的优惠会对照超市官网核实：标“✓ 真降价”表示特价低于这家店近 30 天的最低价（瑞典法律要求商家公布这个价格）；其他超市官网不提供原价，暂时无法核实。“比价”是 Matpriskollen 给出的每公斤、每升或每件价格，方便不同包装之间比较。标了“会员”的需要会员卡，限购和有效期点开就能看到，最终以店内价签为准。中文名是翻译的，新上架的商品可能暂时只有瑞典语。</p>
   </footer>
 </div>
 
@@ -327,9 +333,10 @@ footer a { color: inherit; }
       const it = {
         sid: s.id, p: o.t, br: o.br, b: [o.br, size].filter(Boolean).join(", "), size,
         pr: o.pr, cp: o.cp, c: o.g || "HUSHALL", cat: o.cat, zh: o.zh || "", img: o.img || "", imgurl: o.imgurl || "", imgsrc: o.imgsrc || "",
-        sub: o.s, cond: o.cond, disc: o.disc, to: o.to, origin: o.origin, tags: o.tags || []
+        sub: o.s, cond: o.cond, disc: o.disc, to: o.to, origin: o.origin, tags: o.tags || [],
+        imgbig: o.imgbig || "", reg: o.reg || "", save: o.save || "", low30: o.low30 || "", verified: o.verified
       };
-      it.member = MEMBER.test(`${o.cond} ${o.disc}`);
+      it.member = o.member === true || MEMBER.test(`${o.cond} ${o.disc}`);
       it.u = compInfo(o.cp) || unitInfo(o.pr, size);
       it.name = displayName(it);
       it.key = norm([it.p, it.br, it.zh, it.name, it.cat].join(" "));
@@ -356,7 +363,7 @@ footer a { color: inherit; }
   function visible() {
     const q = norm(state.q.trim());
     const terms = q ? q.split(/\s+/) : [];
-    return ITEMS.filter((it) => !state.off.has(it.sid) && (state.cat === "ALL" || it.c === state.cat) && terms.every((t) => it.key.includes(t)));
+    return ITEMS.filter((it) => !state.off.has(it.sid) && (state.cat === "ALL" || it.c === state.cat) && (!state.onlyOk || it.verified === true) && terms.every((t) => it.key.includes(t)));
   }
 
   function thumb(it) {
@@ -377,9 +384,10 @@ footer a { color: inherit; }
           <span class="zh">${esc(it.name)}</span>
           <span class="sv">${esc(it.p)}</span>
           ${it.b ? `<span class="brand">${esc(it.b)}</span>` : ""}
+          ${it.verified === true ? `<span class="chk ok">✓ 真降价 · 低于近30天最低价</span>` : it.verified === false ? `<span class="chk no">不比近30天便宜</span>` : ""}
           ${where}
         </span>
-        <span class="tag">${it.member ? `<span class="mem">会员</span>` : ""}<span class="deal${isText ? " text" : ""}">${tagText(it.pr)}</span>${it.u.label ? `<span class="unit" style="display:block">${esc(it.u.label)}</span>` : ""}</span>
+        <span class="tag">${it.member ? `<span class="mem">会员</span>` : ""}<span class="deal${isText ? " text" : ""}">${tagText(it.pr)}</span>${it.u.label ? `<span class="unit" style="display:block">${esc(it.u.label)}</span>` : ""}${it.save ? `<span class="save">${esc(it.save.replace(/^spara/i, "省"))}</span>` : ""}</span>
       </button>
     </div>`;
   }
@@ -387,7 +395,7 @@ footer a { color: inherit; }
   function moreHtml(it) {
     const s = BYID[it.sid];
     const big = it.imgurl
-      ? `<div class="big"><img src="${esc(it.imgurl.replace("t_200", "t_500"))}" data-fallback="${esc(it.imgurl)}" alt="${esc(it.p)}"></div>`
+      ? `<div class="big"><img src="${esc(it.imgbig || it.imgurl)}" data-fallback="${esc(it.imgurl)}" alt="${esc(it.p)}"></div>`
       : it.img
       ? `<div class="big"><img src="${IMG(it.img, "full")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
       : `<div class="big none">暂无图片</div>`;
@@ -397,6 +405,9 @@ footer a { color: inherit; }
       ${it.b ? `<dt>品牌规格</dt><dd>${esc(it.b)}</dd>` : ""}
       ${it.sub && it.sub !== it.size ? `<dt>说明</dt><dd>${esc(/välj mellan olika sorter/i.test(it.sub) ? "多种口味/款式可选" : it.sub)}</dd>` : ""}
       <dt>特价</dt><dd>${esc(it.pr)}${it.cp ? `（比价 ${esc(it.cp)}）` : (it.u.label ? `（${esc(it.u.label)}）` : "")}</dd>
+      ${it.reg ? `<dt>原价</dt><dd>${esc(it.reg)}${it.save ? `（${esc(it.save.replace(/^spara/i, "省"))}）` : ""}</dd>` : ""}
+      ${it.low30 ? `<dt>近30天最低</dt><dd>${esc(it.low30)}</dd>` : ""}
+      <dt>核实</dt><dd>${it.verified === true ? "已核实：特价低于这家店近30天的最低价" : it.verified === false ? "特价没有低于近30天最低价，不算真正降价" : it.reg ? "有原价，但官网没给近30天最低价" : "这家店官网不提供原价，暂无法核实"}</dd>
       ${cond ? `<dt>条件</dt><dd>${esc(cond)}</dd>` : ""}
       ${it.to ? `<dt>有效期至</dt><dd>${esc(validTo(it.to))}</dd>` : ""}
       ${it.zh ? `<dt>中文</dt><dd>${esc(it.zh)}</dd>` : ""}
@@ -492,6 +503,7 @@ footer a { color: inherit; }
 
   // events
   $("q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+  $("onlyOk").addEventListener("change", (e) => { state.onlyOk = e.target.checked; render(); });
   $("sort").addEventListener("change", (e) => { state.sort = e.target.value; ls.set("sort", state.sort); render(); });
   $("stores").addEventListener("click", (e) => {
     const b = e.target.closest("[data-store]"); if (!b) return;

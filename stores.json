@@ -52,6 +52,10 @@
    "lat": 58.4091,
    "lon": 15.5627,
    "src": "Hemköp"
+  },
+  "axfood": {
+   "host": "www.hemkop.se",
+   "store": "4193"
   }
  },
  {
@@ -93,6 +97,10 @@
    "lat": 58.4263,
    "lon": 15.5832,
    "src": "Willys"
+  },
+  "axfood": {
+   "host": "www.willys.se",
+   "store": "2178"
   }
  },
  {
@@ -120,6 +128,10 @@
    "lat": 58.4341,
    "lon": 15.5893,
    "src": "Willys"
+  },
+  "axfood": {
+   "host": "www.willys.se",
+   "store": "2298"
   }
  },
  {

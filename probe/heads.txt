@@ -1,0 +1,41 @@
+== probe/cg1.json
+"SearchQuery should not be empty"
+== probe/cg2.json
+<html>
+<head><title>503 Service Temporarily Unavailable</title></head>
+<body>
+<center><h1>503 Service Temporarily Unavailable</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+<!-- a padding to disable MSIE and Chrome friendly error page -->
+
+== probe/hemkop.json
+{"results":[{"potentialPromotions":[],"inactivePotentialPromotions":[],"comparePriceUnit":"kg","ranking":null,"image":{"imageType":"PRIMARY","format":"product","url":"https://assets.axfood.se/image/upload/f_auto,t_200/08715700016504_C1C1_s01","altText":null,"galleryIndex":null,"width":null},"isDrugProduct":false,"comparePrice":"34,97 kr","averageWeight":null,"depositPrice":"","solrSearchScore":null,"energyDeclaration":null,"newsSplashProduct":false,"notAllowedAnonymous":false,"notAllowedB2b":false,"pickupProductLine2":"HEINZ, 1kg","priceUnit":"kr/st","productLine2":"HEINZ, 1kg","googleAnalyticsCategory":"skafferi|kryddor-och-smaksattare|ketchup-och-senap","gdprTrackingIncompliant":false,"sav
+"image":{"imageType":"PRIMARY"
+"thumbnail":{"imageType":"PRIMARY"
+"thumbnail"
+== probe/lidl1.json
+
+== probe/off.json
+{"count":716,"page":1,"page_count":3,"page_size":3,"products":[{"_id":"8715700407760","_keywords":["ab","agriculture","aliment","b-v","base","bio","biologique","boisson","condiment","de","derive","eg-oko-verordnung","en-ht-bio-154","et","europeen","fruit","h-j","heinz","ketchup","legume","nl-bio-01","non","origine","point","sauce","tomate","tomato","triman","ue","ue-non","vegetale","vegetaux","vert"],"added_countries_tags":[],"additives_n":0,"additives_original_tags":[],"additives_tags":[],"allergens":"céleri","allergens_from_user":"(en) en:celery","allergens_hierarchy":["en:celery"],"allergens_lc":"fr","allergens_tags":["en:celery"],"amino_acids_prev_tags":[],"amino_acids_tags":[],"brands"
+"image_url":"https://images.openfoodfacts.org/images/products/871/570/040/7760/front_en.141.400.jpg"
+"images":{"1":{"sizes":{"100":{"h":75
+"images":["11"
+== probe/willys.json
+{"results":[{"potentialPromotions":[],"inactivePotentialPromotions":[],"comparePriceUnit":"kg","ranking":null,"image":{"imageType":"PRIMARY","format":"product","url":"https://assets.axfood.se/image/upload/f_auto,t_200/08715700016504_C1C1_s01","altText":null,"galleryIndex":null,"width":null},"isDrugProduct":false,"comparePrice":"33,02 kr","averageWeight":null,"depositPrice":"","solrSearchScore":null,"energyDeclaration":null,"newsSplashProduct":false,"notAllowedAnonymous":false,"notAllowedB2b":false,"pickupProductLine2":"HEINZ, 1kg","priceUnit":"kr/st","productLine2":"HEINZ, 1kg","googleAnalyticsCategory":"","gdprTrackingIncompliant":false,"savingsAmount":null,"priceNoUnit":"33,02","precaution
+"image":{"imageType":"PRIMARY"
+"thumbnail":{"imageType":"PRIMARY"
+"thumbnail"
+== probe/cg3.html
+<!doctype html><html lang="sv"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><link rel="preconnect" href="https://consent.cookiebot.com"/><link rel="preconnect" href="https://www.googletagmanager.com"/><link rel="preconnect" href="https://static.hotjar.com"/><link rel="manifest" href="/manifest.json"/><link rel="shortcut icon" href="/favicon.png"/><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"/><link rel="apple-touch-icon" sizes="152x152" href="/img/apple-touch-icon-152x152.png"/><link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon-180x180.png"/><style data-styled="true" data-styled-version="5.3.11">.jVEQvf
+== probe/lidl2.html
+<!DOCTYPE html><html  lang="sv-SE"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Resultat för Lidl.se för: heinz ketchup</title><script type="importmap">{"imports":{"#entry":"/q/storefront-dist/Bf_midYo.js"}}</script><style>:root{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;color:#222;--ods-ad-tag-font-size:.6875rem;--ods-ad-tag-letter-spacing:.3;--ods-ad-tag-line-height:1rem;--ods-desktop-body-footnote-base:500;--ods-desktop-body-footnote-font-family:"LidlFontPro";--ods-desktop-body-footnote-font-size:.8125rem;--ods-desktop-body-footnote-letter-spacing:.25;--ods-desktop-body-footnote-line-height:1.25rem;--ods
+"image":262
+"image":262
+"image":262

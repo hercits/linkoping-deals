@@ -781,6 +781,7 @@ button { cursor: pointer; }
 .deal small { font-size: 13px; font-weight: 600; }
 .deal.text { font-size: 15px; white-space: normal; max-width: 120px; }
 .unit { font-size: 11.5px; font-variant-numeric: tabular-nums; opacity: .8; white-space: nowrap; }
+.mem { display: block; font-size: 10.5px; font-weight: 600; letter-spacing: .04em; margin-bottom: 1px; }
 
 /* expanded item */
 .more { display: grid; grid-template-columns: minmax(0, 220px) minmax(0, 1fr); gap: 14px; padding: 4px 12px 14px; }
@@ -844,7 +845,7 @@ footer a { color: inherit; }
   <footer>
     <p>点一条优惠可以看大图和完整信息。带 SE 标记的是店里价签上的瑞典语名称，照着找就行。</p>
     <p>优惠和商品图片来自 <a href="https://matpriskollen.se" target="_blank" rel="noopener">Matpriskollen</a>，每天早上自动更新。地图 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors。距离是到 Vallastaden 的直线距离。</p>
-    <p>部分优惠只限会员（ICA-kort、Coop 会员、Willys Plus 等）或有限购，以店内价签为准。中文名是自动翻译，约等于的单价按包装规格估算，仅供比价参考。</p>
+    <p>“比价”是 Matpriskollen 给出的每公斤、每升或每件价格，方便不同包装之间比较。标了“会员”的需要会员卡，限购和有效期点开就能看到，最终以店内价签为准。中文名是翻译的，新上架的商品可能暂时只有瑞典语。</p>
   </footer>
 </div>
 
@@ -915,9 +916,42 @@ footer a { color: inherit; }
     return { label: /för/i.test(p) ? `每件 ${kr(each)} kr` : "", key: each };
   }
 
-  // "Ben & Jerry's 冰淇淋": brand from the size field + Chinese product type
+  // Official comparison price "54,05/kg" -> label + sort key
+  function compInfo(cp) {
+    const m = String(cp || "").match(/(\d[\d\s]*(?:[.,]\d+)?)(?:\s*-\s*(\d[\d\s]*(?:[.,]\d+)?))?\s*\/\s*(kg|l|st|hg|förp|frp|tvätt|disk|m)\b/i);
+    if (!m) return null;
+    const a = num(m[1]), b = m[2] ? num(m[2]) : a;
+    const per = m[3].toLowerCase() === "hg" ? 10 : 1;
+    return { label: `比价 ${String(cp).replace(/\s*\/\s*/, " kr/")}`, key: ((a + b) / 2) * per };
+  }
+
+  // Swedish offer conditions -> short Chinese
+  const MEMBER = /(willys plus|plus-pris|medlem|ica-kort|stammis|klubbpris|lidl plus|mer för medlemmar)/i;
+  function condZh(c) {
+    if (!c) return "";
+    return String(c).split(/(?<=\.)\s+/).map((p) => {
+      let m;
+      if ((m = p.match(/max\s*(\d+)\s*köp\s*\/\s*hushåll/i))) return `每户限购 ${m[1]} 件`;
+      if ((m = p.match(/max\s*(\d+)\s*kg\s*\/\s*hushåll/i))) return `每户限购 ${m[1]} 公斤`;
+      if (/gäller\s*tors(dag)?\s*-\s*sön(dag)?/i.test(p)) return "仅周四到周日";
+      if (/gäller\s*fre(dag)?\s*-\s*sön(dag)?/i.test(p)) return "仅周五到周日";
+      if (/tillfälligt klipp/i.test(p)) return "店内限时特价";
+      if (MEMBER.test(p)) return "会员价";
+      if ((m = p.match(/^gäller ej\s+(.+?)\.?$/i))) return `不含 ${m[1]}`;
+      return p.replace(/\.$/, "");
+    }).join("；");
+  }
+
+  const WD = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+  function validTo(ts) {
+    if (!ts) return "";
+    const d = new Date(ts * 1000);
+    return `${d.getMonth() + 1}月${d.getDate()}日 ${WD[d.getDay()]}`;
+  }
+
+  // "Ben & Jerry's 冰淇淋": brand + Chinese product type
   function displayName(it) {
-    const raw = String(it.b || "").split(",")[0].trim();
+    const raw = String(it.br || "").trim();
     let brand = "";
     if (/^butiksbakat$/i.test(raw)) brand = "店内现烤";
     else if (/^manuella disken$/i.test(raw)) brand = "柜台";
@@ -956,11 +990,19 @@ footer a { color: inherit; }
     }).sort((a, b) => (a.km ?? 99) - (b.km ?? 99));
     BYID = Object.fromEntries(STORES.map((s) => [s.id, s]));
     ITEMS = [];
-    STORES.forEach((s) => (s.items || []).forEach((r) => {
-      const [p, b, pr, c, zh, img] = r;
-      const it = { sid: s.id, p, b, pr, c, zh, img: img || "", u: unitInfo(pr, b) };
+    const nowSec = Date.now() / 1000;
+    STORES.forEach((s) => (s.items || []).forEach((o) => {
+      if (o.to && o.to < nowSec) return; // expired since the last update
+      const size = o.v || (o.s && o.s.length <= 24 && !/sorter/i.test(o.s) ? o.s : "");
+      const it = {
+        sid: s.id, p: o.t, br: o.br, b: [o.br, size].filter(Boolean).join(" · "), size,
+        pr: o.pr, cp: o.cp, c: o.g || "HUSHALL", cat: o.cat, zh: o.zh || "", img: o.img || "",
+        sub: o.s, cond: o.cond, disc: o.disc, to: o.to, origin: o.origin, tags: o.tags || []
+      };
+      it.member = MEMBER.test(`${o.cond} ${o.disc}`);
+      it.u = compInfo(o.cp) || unitInfo(o.pr, size);
       it.name = displayName(it);
-      it.key = norm([p, b, zh, it.name].join(" "));
+      it.key = norm([it.p, it.br, it.zh, it.name, it.cat].join(" "));
       ITEMS.push(it);
     }));
     const d = new Date(data.updated_at);
@@ -1006,7 +1048,7 @@ footer a { color: inherit; }
           ${it.b ? `<span class="brand">${esc(it.b)}</span>` : ""}
           ${where}
         </span>
-        <span class="tag"><span class="deal${isText ? " text" : ""}">${tagText(it.pr)}</span>${it.u.label ? `<span class="unit" style="display:block">${esc(it.u.label)}</span>` : ""}</span>
+        <span class="tag">${it.member ? `<span class="mem">会员</span>` : ""}<span class="deal${isText ? " text" : ""}">${tagText(it.pr)}</span>${it.u.label ? `<span class="unit" style="display:block">${esc(it.u.label)}</span>` : ""}</span>
       </button>
     </div>`;
   }
@@ -1016,12 +1058,17 @@ footer a { color: inherit; }
     const big = it.img
       ? `<div class="big"><img src="${IMG(it.img, "thumb300p")}" data-fallback="${IMG(it.img, "thumb100p")}" alt="${esc(it.p)}"></div>`
       : `<div class="big none">没有图片</div>`;
+    const cond = condZh(it.cond);
     return `<div class="more">${big}<dl>
       <dt>店内名</dt><dd class="sv-big">${esc(it.p)}</dd>
       ${it.b ? `<dt>品牌规格</dt><dd>${esc(it.b)}</dd>` : ""}
-      <dt>特价</dt><dd>${esc(it.pr)}${it.u.label ? `（${esc(it.u.label)}）` : ""}</dd>
+      ${it.sub && it.sub !== it.size ? `<dt>说明</dt><dd>${esc(/välj mellan olika sorter/i.test(it.sub) ? "多种口味/款式可选" : it.sub)}</dd>` : ""}
+      <dt>特价</dt><dd>${esc(it.pr)}${it.cp ? `（比价 ${esc(it.cp)}）` : (it.u.label ? `（${esc(it.u.label)}）` : "")}</dd>
+      ${cond ? `<dt>条件</dt><dd>${esc(cond)}</dd>` : ""}
+      ${it.to ? `<dt>有效期至</dt><dd>${esc(validTo(it.to))}</dd>` : ""}
       ${it.zh ? `<dt>中文</dt><dd>${esc(it.zh)}</dd>` : ""}
-      <dt>分类</dt><dd>${esc(CAT_NAME[it.c] || "")}</dd>
+      <dt>分类</dt><dd>${esc(CAT_NAME[it.c] || "")}${it.cat ? ` · ${esc(it.cat)}` : ""}</dd>
+      ${it.origin ? `<dt>产地</dt><dd>${esc(it.origin)}</dd>` : ""}
       <dt>超市</dt><dd>${esc(s.name)} · ${kr(s.km, 1)} km${s.address ? " · " + esc(s.address) : ""}</dd>
     </dl></div>`;
   }

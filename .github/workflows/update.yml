@@ -1,0 +1,32 @@
+name: Update offers
+on:
+  schedule:
+    - cron: "17 4 * * *"   # every day ~06:17 Stockholm summer time (05:17 in winter)
+  workflow_dispatch:
+  push:
+    paths: [tools/scrape.py, stores.json, zh.json, .github/workflows/update.yml]
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: update-offers
+  cancel-in-progress: false
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch offers from Matpriskollen
+        run: python3 tools/scrape.py
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json missing_zh.txt
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -m "Update offers $(TZ=Europe/Stockholm date +'%Y-%m-%d %H:%M')"
+          git pull --rebase && git push
+      - name: Rebuild the website
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages not enabled yet"

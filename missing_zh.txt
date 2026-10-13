@@ -26,6 +26,7 @@ Blandfärs 50/50
 Blandfärs, eko
 Blockljus LED
 Blodgrape
+Blåmusslor i nät, färska
 Blöja
 Bog, skogsrökt
 Bolognesefärs/Tacofärs
@@ -95,6 +96,7 @@ Fläskytterfilé, mörmarinerad
 Folkeost/Mejaost
 Fond
 Fralla/Tekaka
+Fruktkolor/Godis, låda
 Fruktstång
 Frönuftig
 Färdigrätt Dagens
@@ -106,8 +108,11 @@ Färskpasta
 Färskpasta/Lasagneplattor, färska
 Giffel
 Glass, vanilj & kakao
+Godispumpa m. handtag
 Godispåse Ferraribilar
+Godispåse Fruktkola m. tatuering
 Godispåse Godisben/Tänder
+Godispåse Minioner
 Godispåse Palle Kuling/Tutti Frutti
 Gourmetbröd Tranbär, butiksbakat
 Grana Padanoost
@@ -128,10 +133,6 @@ Grädde Visp-
 Gräddglass Finaste
 Grönsaker
 Gyros, förkokt
-Halloweengodis Minioner
-Halloweengodismix i påse
-Halloweengodispumpa m. handtag
-Halloweengodispåse Fruktkola m. tatuering
 Hamburgare av nöt, 16-p
 Hamburgare m. bacon/av högrev
 Hamburgare, 8-p
@@ -207,6 +208,7 @@ Köttfärs Nöt & Grönt
 Lampa LED, filament
 Lantbröd Grekiskt-/Surdegsbröd Italienskt-
 Lasagneplattor, färska
+Laxburgare m. fetaost, förstekt
 Laxfilé
 Laxfilé i tråg, benfri
 Laxfilé, hel sida, färsk

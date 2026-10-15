@@ -9,7 +9,6 @@ Bacon, minitärnat
 Bacon, skivat
 Bacon, skivat, 3-p
 Bacon, skivat, 3-p/tärnat
-Bacon, skivat, 5-p
 Baguette Vitlöks-
 Bakelse Prinsess-, 2-p
 Bakplåtspapper
@@ -22,10 +21,12 @@ Barnmat Gröt/Yummies, klämpåse
 Barnsmoothie Min Frukt-, klämpåse
 Beef Ribs
 Bitar/Filé/Färs
+Bladpersilja
 Blandfärs 50/50
 Blandfärs, eko
 Blockljus LED
 Blodgrape
+Blåbär i ask
 Blåmusslor i nät, färska
 Blöja
 Bog, skogsrökt
@@ -40,6 +41,7 @@ Bukett
 Buljongtärning
 Burrataost/Stracciatellaost, original/tryffel
 Bär, frysta
+Bär/Frukt, fryst
 Bönor/Kikärtor/Linser, tetrapack, eko
 Bönpasta/Linspasta
 Cantuccini Mandelskorpa
@@ -74,6 +76,7 @@ Dracaena Tutti Frutti
 Dressing/Sås
 Dryck, citron & ingefära/tranbär
 Entrecôte av nöt, skivad
+Espressomaskin
 Fetaost
 Fiberrost/Originalrost, skivad
 Filmjölk Cultura
@@ -114,6 +117,7 @@ Godispåse Fruktkola m. tatuering
 Godispåse Godisben/Tänder
 Godispåse Minioner
 Godispåse Palle Kuling/Tutti Frutti
+Goudaost/Mozzarellaost, riven
 Gourmetbröd Tranbär, butiksbakat
 Grana Padanoost
 Grana Padanoost, kuber
@@ -133,6 +137,7 @@ Grädde Visp-
 Gräddglass Finaste
 Grönsaker
 Gyros, förkokt
+Halloweenpumpa
 Hamburgare av nöt, 16-p
 Hamburgare m. bacon/av högrev
 Hamburgare, 8-p
@@ -164,6 +169,7 @@ Kaffe Espresso, hela bönor
 Kaffe, hela bönor, original/eko
 Kaffekapsel
 Kaffekapsel Dolce Gusto
+Kakifrukt
 Kakor, mjuka
 Kalvschnitzel av kalvinnanlår
 Karameller, mjuka/Klubbor/Marshmallows
@@ -182,6 +188,7 @@ Kexchoklad
 Kiwi, gul i ask
 Klubba Marschmallow-, halloween
 Knäckebröd Power-
+Knäckebröd Sandwich
 Kokkorv, konserv
 Kokosmjölk/Kryddmix/Nudlar
 Kokosolja, eko
@@ -189,6 +196,7 @@ Kolsyremaskin Gigapack
 Korv Fuet
 Kronljus
 Krydda i småglas
+Krysantemum Multiflora
 Kyckling Ätklar
 Kycklingben, grillkryddade
 Kycklingbröstfilé/Kycklinglårfilé
@@ -202,6 +210,7 @@ Kycklinglårfilé, mörad
 Kycklingvinge, grillad
 Kärnsund/Lantgoda, surdegsbröd, skivat
 Kålrot/Palsternacka/Rotselleri
+Köksassistent
 Köttbullar
 Köttbullar Mammas-
 Köttfärs Nöt & Grönt
@@ -214,6 +223,8 @@ Laxfilé i tråg, benfri
 Laxfilé, hel sida, färsk
 Leverpastej, bredbar i ask
 Lime
+Ljung
+Ljung Erica i kruka
 Lussekatt
 Läsk Citrus, 4-p
 Läsk, burk
@@ -235,11 +246,14 @@ Makaroner/Pasta Fullkorns-
 Mango, mogen
 Margarin Bords-, mellan
 Margarin Bords-, växtbaserat
+Margarin Culinesse, flytande
 Marmelad
 Mascarponeost m. gorgonzola
 Maskindisk All in 1, powerball
 Matlagningsvin
 Matlåda, plast m. lock
+Matpumpa Butternut
+Minipizza Picco Pizzi-, 12-p
 Minutbiff av nöt, skivad
 Mjölkchoklad i nät
 Mjölkdryck, färsk, laktosfri
@@ -249,6 +263,7 @@ Mozzarellaost
 Mozzarellaost, buffel
 Muffins Choklad-, 6-p
 Mugg Halloween-
+Multimixer
 Müsli
 Müslibröd/Sandwich Protein/Skördefest
 Naturgodis
@@ -278,8 +293,10 @@ Pastasås, eko
 Pesto
 Picnicbog av fläskkött
 Pizza Snack-
+Pizza, stenugnsbakad, 2-3-p
 Pizza, vedugnsbakad
 Pizzasås
+Plommon
 Plommon i korg
 Plommon, röda i ask
 Pomelo Honungs-
@@ -291,9 +308,11 @@ Potatis i påse
 Potatis, fast/mjölig i påse
 Proteinbar/Proteinmilkshake
 Proteinbar/Återhämtningsdryck
+Proteindryck/Proteinpudding
 Proteinmilkshake
 Pumpa Butternut-
 Pumpa Dekorations-
+Purjolök
 Pyttipanna Ox-, original
 Päron
 Pålägg Tunna Skivor
@@ -301,6 +320,7 @@ Quattrocento
 Rapsolja- & Olivolja
 Ris Basmati-
 Ris Boil in bag Basmati-/Jasmin-, 8-p
+Ros i kruka
 Ryggbiff av nöt
 Ryggbiff m. kappa, skivad
 Räkor Ishavs- 80/100 m. skal
@@ -347,6 +367,7 @@ Spareribs av fläskkött BBQ/Chili
 Spenat, hackad
 Sportdryck
 Spättafilé Stillahavs-
+Stavmixerset
 Stekpanna, keramisk
 Ströbröd Panko-
 Sås
@@ -361,6 +382,7 @@ Tandborsthuvud
 Tandborsthuvud, refill
 Tandtrådsbygel
 Tepåse, eko
+Termosmugg
 Texassteak av fransyska/Vardagsbiff av nöt, skivad
 Tomat, krossad, smaksatt, tetrapack
 Tomat, soltorkad
@@ -374,14 +396,20 @@ Tårta
 Tårta, 8-10-port.
 Vatten, kolsyrat, flaska
 Vegoprodukter
+Vindruvor Moldova, mörka
 Vindruvor, röda, kärnfria i ask
+Vitlök Morado
 Vårrulle Classic, 8-p
 Yoghurt Grekisk-/Yoghurt Turkisk-
 Yoghurt, mini/original
 Yoghurt, naturell
 Yoghurt, original/mini
 Zucchini, grön
+Älgfärs
+Älgskav
+Äpple Aroma/Ingrid Marie
 Äpple Royal Gala
 Äpple i påse
 Öl 3,5% Bayerskt/Extra Brew, burk, 6-p
+Öl 3,5%, burk, 6-p
 Ölkorv

@@ -13,6 +13,7 @@ Babyvårdsprodukter, oparfymerade
 Bacon, skivat, 3-p
 Bacon, skivat/tärnat/Kycklingbacon
 Baguette Halv-, butiksbakad
+Baguette Vitlöks-, 2-p
 Bakpotatis
 Balsam/Duschcreme/Schampo
 Balsam/Schampo
@@ -50,7 +51,9 @@ Brustablett C-vitamin
 Bröd Italienskt-, butiksbakat
 Bröd Rustikt-
 Buffalo Wings, grillkryddade
+Bukett Höst
 Buljongtärning
+Bulle Kanel-/Vanilj-, butiksbakad
 Byxblöja Baby Dry, maxibox
 Calandiva
 Cheddarost
@@ -268,6 +271,7 @@ Mango, mogen
 Mannafrutti/Risifrutti
 Mannafrutti/Risifrutti XL
 Margarin Bak & Mat-
+Margarin Bords- Gårdsgoda, normalsaltat
 Margarin Bords- Gårdsgoda, original/laktosfri
 Margarin Bords-, eko/laktosfri
 Margarin Culinesse, flytande
@@ -281,6 +285,7 @@ Mixers
 Mjölkdryck, laktosfri
 Mopp SuperMocio m. hink
 Morot i påse, eko
+Mozzarellaost
 Mugg, porslin
 Måltidsdelar, vegetariska
 Mördegskaka Dansk, plåtburk
@@ -315,6 +320,7 @@ Pastasås Mild Ost, tetrapack
 Pastrami, flatrökt/Skinka Dacke-
 Pingvinstång
 Pinsa
+Pinsa Romana
 Pitabröd
 Pizzadeg, original/glutenfri/laktosfri
 Pizzadeg, surdeg
@@ -338,6 +344,7 @@ Ribs av fläskkött
 Ris Basmati-
 Ris, eko
 Riskokare
+Rosor Lyx-
 Rostbiff av nöt
 Ryggbiff av nöt
 Ryggbiff av nöt, skivad
@@ -409,6 +416,7 @@ Vatten, kolsyrat
 Vatten, kolsyrat/stilla
 Veganburger Juicy, 4-p
 Veganska Måltidsdelar, veganska
+Vetekaka, 12-p
 Vindruvor, röda i ask
 Vindruvor, röda, kärnfria i ask
 Vitaminer

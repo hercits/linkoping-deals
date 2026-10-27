@@ -1,5 +1,6 @@
 Airfryerform, silikon
 Amaryllis, 2-stänglad i kruka
+Amaryllis, röd
 Ananas, konserv, 3-p
 Ansiktskräm Revitalift
 Antikljus
@@ -24,8 +25,10 @@ Bitar/Filé/Färs
 Bitar/Filé/Färs, ovo-vegetariskt
 Björkved
 Blandfärs 70/30
+Blandfärs, eko
 Blockljus
 Blockljus LED
+Blåbär i ask
 Blåbär/Hallon
 Blöja Comfort/Up&Go
 Bondbröd
@@ -90,9 +93,11 @@ Fetaost/Getost
 Fetaost/Grillost/Halloumiost
 Fiberrost/Originalrost, skivad
 Fiskfilé, sprödbakad, 4-p
+Fiskfläta m. Pesto Rosso
 Flingor Special Flakes
 Fläskbog, torkad
 Fläskkarré, benfri, skivad
+Fläskkarré/-kotlett, benfri, skivad, 2-p
 Fläskkotlett, benfri
 Fläskschnitzel, panerad
 Fond
@@ -128,6 +133,7 @@ Grevéost/Herrgårdsost/Prästost
 Grevéost/Herrgårdsost/Prästost/Rikeost, lagrad
 Grillkorv, original/cheezy chorizo
 Grillost Norrloumi
+Grilloumiburgare/Halloumiost
 Gryta, gjutjärn
 Grädde Mat-/Grädde Visp-/Vaniljvisp, original/laktosfri
 Grädde Spray-
@@ -140,6 +146,7 @@ Halloumiost
 Halloweenpumpa
 Halstablett, påse
 Halva
+Hamburgare av högrev
 Hamburgerbröd Brioche, 4-p
 Haricots Verts/Salladsärtor/Sockerärtor
 Hasselnötscreme Nella-
@@ -223,6 +230,7 @@ Lammstek m. ben
 Lammstek, skivad
 Lantbröd Grekiskt-
 Lax Vild-, 4-p
+Lax, gravad/kallrökt/najad, skivad
 Lax, hel sida, färsk
 Laxfilé, hel sida, färsk
 Laxloin, färsk
@@ -289,6 +297,7 @@ Ost Familjefavoriter
 Ost Protein-
 Ost, lagrad
 Ostfralla m. goudaost
+Osthyvel
 Oxfilé
 Oxfilé, halv/hel
 Oxfilé, skivad
@@ -349,6 +358,8 @@ Rismellis
 Ros i kruka
 Rosor Premium
 Rostbiff av nöt, marinerad, grillad
+Ryggbiff av nöt
+Räkor
 Räkor Sallads- i lake
 Räkor m. skal
 Rågkaka/Vetekaka, 24-30-p
@@ -367,6 +378,7 @@ Salt-/Pepparkvarn, elektrisk
 Schampo
 Senap Grovstark-/Sötstark-
 Serveringspanna m. lock
+Servetter
 Servetter Pumpor-
 Sesambar
 Skinka, honungsmarinerad/ålarökt
@@ -394,6 +406,7 @@ Stilldrink, 10-p
 Sås
 Sås, burk
 Sås, flaska
+Tacofärs av fläskfärs
 Tacokrydda
 Tacokrydda, 3-p
 Tahini
@@ -402,6 +415,7 @@ Tomat Snack- i ask
 Tomatmix i ask
 Torskryggfilé
 Tortilla Stand 'N Stuff, 8-p
+Tortilla, 8-p
 Tzatziki/Yoghurt Turkisk-
 Tändbriketter
 Tårta
@@ -430,6 +444,7 @@ Yoghurt, naturell/vanilj
 Yoghurt, original/mini
 Ädelost
 Ägg, eko
+Älggrytkött
 Äpple Aroma/Ingrid Marie/Rubinola
 Äpple Royal Gala
 Äpple Royal Gala i påse

@@ -17,6 +17,7 @@ Balsam/Schampo Elvital
 Barngröt, klämpåse
 Barnmat Min frukt, klämpåse
 Barnmat, burk, eko
+Basilika i kruka, eko
 Biff/Entrecôte av nöt
 Bifteki
 Binda/Inkontinensskydd/Trosskydd
@@ -34,13 +35,17 @@ Blöja Comfort/Up&Go
 Bondbröd
 Bondost Fransk-
 Bougatsa
+Brieost Petit
 Brieost de Meaux
 Brieost/Camembertost
 Brieost/Camembertost/Getost
+Bromelia
 Brookie/Brownie/Cookies
+Brysselkål
 Bröd m. valnöt & russin/Levain Rustique
 Brödkusar
 Buljongtärning
+Burrataost m. tryffelsmak
 Bärdryck/Fruktdryck
 Bågar/Chips/Ringar
 Böngroddar i ask, eko
@@ -58,7 +63,9 @@ Chips/Tacosås/Tortilla
 Chips/Tacosås/Tortilla Soft-
 Choco Crunch/Smash
 Chokladboll, 4-p
+Chokladdryck Pucko
 Chokladdryck Pucko, original
+Chokladfigur Halloween
 Chokladpåse
 Chokladpåse Bridgebl./Kexchoklad/Polly
 Chokladpåse Crunchy Treats
@@ -83,6 +90,7 @@ Donuts
 Dressing/Sås
 Entrecôte av nöt
 Entrecôte av nöt, skivad
+Entrecôte/Ryggbiff av nöt
 Entrecôte/Ryggbiff av nöt, skivad
 Espressokokare
 Falafel
@@ -202,6 +210,7 @@ Knäckebröd Original/Rågi/Sport
 Knäckebröd Power-
 Knäckebröd Trekant, vallmo
 Koljaryggfilé
+Korv Fuet
 Korvbröd Brioche, 6-p
 Krydda i småglas
 Krydda, färsk, eko
@@ -234,6 +243,7 @@ Lax, gravad/kallrökt/najad, skivad
 Lax, hel sida, färsk
 Laxfilé, hel sida, färsk
 Laxloin, färsk
+Levain
 Levain, surdeg
 Leverpastej, bredbar i ask, original/gurka
 Lime
@@ -319,10 +329,12 @@ Petflaska
 Pezzo
 Pinsa
 Pirog, 10-p
+Pistagenötter, rostade & saltade
 Pizza, 2-p
 Pizza, stenugnsbakad
 Plommon
 Plommon, röda i korg
+Pomelo Honungs-
 Pommes
 Pommes Super Crunch
 Popcorn
@@ -330,6 +342,7 @@ Potatis Amandine-/Mandel-/Sparris- i påse
 Potatis Smått & Gott i påse
 Potatis, fast sort i påse
 Potatis, fast/mjölig i påse
+Potatis, mix
 Potatisgratäng
 Potatisgratäng, cheddar & vitlök
 Prinskorv m. tunt skinn
@@ -372,6 +385,7 @@ Salami Magnifico-, skivad
 Salami Sticks
 Salami Tryffel-, skivad
 Sallad Familjemix i påse
+Sallad Gentile-
 Sallad Isberg & Frisé-/Frisé & Mâche-
 Salladsbar
 Salt-/Pepparkvarn, elektrisk
@@ -399,6 +413,7 @@ Spareribs av fläskkött
 Spareribs av fläskkött, förkokt
 Spareribs av fläskkött, grillade
 Sparris, grön i knippe
+Spenat i påse
 Stavmixerset
 Stillahavskummel, sprödbakad
 Stilldrink
@@ -428,12 +443,14 @@ Vatten, kolsyrat, 12-p
 Vattenkittel
 Vesterhavsost, eko
 Vetelimpa
+Vindruvor Autumn Crisp, gröna i ask
 Vindruvor Moldova, mörka
 Vindruvor, mix, kärnfria i ask
 Vindruvor, röda, kärnfria i ask
 Vitost
 Västerbottensost, lagrad
 Waffle Fries
+Yoghurt Grekisk-
 Yoghurt Grekisk-/Turkisk-, original/eko
 Yoghurt Grekisk-/Yoghurt Turkisk-
 Yoghurt Mild-
@@ -449,5 +466,6 @@ Yoghurt, original/mini
 Äpple Royal Gala
 Äpple Royal Gala i påse
 Ärtor
+Öl 3,5%, burk, 6-p
 Ölkorv
 Ölkorv, 3-p

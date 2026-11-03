@@ -149,7 +149,6 @@ Grillkorv Hots-, 10-p, laktosfri
 Grillost Norrloumi
 Grilloumiost/Halloumiost
 Gruyèreost, grottlagrad
-Grytbas/Ostcrème
 Grädde Buljong-/Grädde Mat-, original/laktosfri
 Grädde Mat-, laktosfri
 Grädde Visp-
@@ -246,7 +245,9 @@ Lampa
 Lampa LED
 Lasagne Karins Familje-/Lyx-
 Lax Regnbågs-, 3-p
+Laxficka m. gorgonzola
 Laxfilé, 4-p
+Laxfilé, dubbel, varmrökt
 Laxfilé, hel sida, färsk
 Likörchoklad i påse
 Ljusslinga Akku, 40 LED
@@ -298,6 +299,7 @@ Oljeljus
 Ost Familjefavoriter, riven
 Ost, lagrad
 Ostbricka
+Ostcrème/Pastasås
 Ostfralla
 Ostsnacks
 Pajdeg/Smördeg
@@ -411,6 +413,7 @@ Syltlök
 Sås
 Sås Hoisin-
 Sås Mayo,- flaska
+Sås Rom-, laktosfri
 Tacosås
 Tampong
 Tandborste

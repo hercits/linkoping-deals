@@ -28,6 +28,7 @@ Babytvål/Babyschampo
 Bacon, 3-p/Stekfläsk, skivat
 Bacon, skivat
 Bacon, skivat, 3-p
+Bacon, skivat/tärnat/Kycklingbacon
 Baguette
 Baguette, mini
 Bakplåtspapper
@@ -42,6 +43,7 @@ Basilika i kruka, eko
 Biff m. kappa
 Biscotti Canestrini al Pistaccio
 Bladpersilja/Dill/Gräslök/Persilja i påse
+Blåbär i ask
 Blåbär, stora i ask
 Blåbärssylt, eco
 Blåmögelost
@@ -91,6 +93,7 @@ Deo Roll-on/Duschcreme
 Deo Roll-on/Duschcreme Men Expert
 Doftljus
 Dominokakor, fyllda
+Donuts Socker-
 Dressing/Sås
 Dryck Naturens Bästa, citron & ingefära/tranbär
 Dryck med ciderkaraktär
@@ -137,6 +140,7 @@ Garderobsblomma i kruka
 Giffel
 Glas Gin & Tonic/Öl
 Glasspinne Pirulo, flerpack
+Godispåse Tutti Frutti/Tyrkisk Peber
 Gosedjur m. godis
 Granatäpple
 Grand Dessert
@@ -214,6 +218,7 @@ Kikärtor, konserv
 Kiwi, gul i korg
 Kladdkaka
 Kladdkaka Kärleksmums-
+Kladdkaka Marabou
 Klubba Marschmallow-, julmotiv
 Knäckebröd Power-
 Kokkorv, konserv
@@ -254,6 +259,7 @@ Ljusslinga Akku, 40 LED
 Ljusslinga Akku, 80 LED
 Läsk, burk, 20-p
 Lättdryck, koncentrat
+Långfranska, skivad
 Långfranska/Snoddas, butiksbakad
 Lök Röd-, picklad
 Lök, röd i nät, eko
@@ -369,6 +375,7 @@ Salami Magnifico-/Peperonico-
 Salami Milano-/Ventricina-, skivad
 Salami i kupa, skivad
 Sallad
+Sallad Crisp- i påse
 Sallad i påse, eko
 Salladskyckling
 Salladslök i knippe
@@ -459,10 +466,12 @@ Yoghurt Grekisk-, naturell
 Yoghurt Protein-
 Yoghurt, naturell/vanilj
 Zucchini, grön
+iKaffe, mjölkfri
 Ädelost
 Ägg, eko
 Äpple Aroma/Ingrid Marie/Rubinola/Piruette
 Äpple Royal Gala i påse
+Äpple, röda i påse
 Ångstrykjärn
 Öl, alkoholfri, burk, 6-p
 Öron-/Näshårstrimmer

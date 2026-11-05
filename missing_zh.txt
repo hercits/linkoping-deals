@@ -11,6 +11,7 @@ Adventstjärna, papper, veckad
 Allkrydda Vegeta
 Aluminiumfolie
 Amaryllis Jumbo-
+Amaryllis i keramikkruka
 Amaryllis, 2-stänglad
 Amaryllis, 2-stänglad i kruka
 Amaryllis, röd, 2-stänglad
@@ -28,7 +29,6 @@ Babytvål/Babyschampo
 Bacon, 3-p/Stekfläsk, skivat
 Bacon, skivat
 Bacon, skivat, 3-p
-Bacon, skivat/tärnat/Kycklingbacon
 Baguette
 Baguette, mini
 Bakplåtspapper
@@ -43,7 +43,7 @@ Basilika i kruka, eko
 Biff m. kappa
 Biscotti Canestrini al Pistaccio
 Bladpersilja/Dill/Gräslök/Persilja i påse
-Blåbär i ask
+Blåbär, frysta
 Blåbär, stora i ask
 Blåbärssylt, eco
 Blåmögelost
@@ -62,16 +62,20 @@ Bönor/Tomat, tetra
 Champinjoner
 Cheddarost, lagrad
 Cheez Dippers/Mini cubes/Mjukost i ask/Smältost
+Chips Lant-, saltade, grytfriterade
 Chips Västkust-
 Chips/Nötmix
 Chips/Tacosås/Tortilla Soft-
 Chokladask
+Chokladask Aladdin/Paradis
 Chokladask Guld
 Chokladask Guldask/Significant Selection
 Chokladask Guldhjärta
 Chokladask Hjärtan
 Chokladask Noblesse
+Chokladask Selected Favourites
 Chokladask, 15-p
+Chokladask, 16-p
 Chokladkaka Excellence
 Chokladkulor Lindor
 Chokladpåse Daim
@@ -93,7 +97,6 @@ Deo Roll-on/Duschcreme
 Deo Roll-on/Duschcreme Men Expert
 Doftljus
 Dominokakor, fyllda
-Donuts Socker-
 Dressing/Sås
 Dryck Naturens Bästa, citron & ingefära/tranbär
 Dryck med ciderkaraktär
@@ -110,6 +113,7 @@ Fish & Crisp, panerad
 Fish & Crisp/Nuggets
 Fisk, panerad
 Fiskpinnar, 15-p
+Flankstek av nöt
 Flerkornsringar/Havrekuddar/Havreringar
 Flingor Special Flakes
 Flingor/Granola
@@ -133,14 +137,16 @@ Färdigrätt Husman
 Färdigrätt Lean/Mannerström
 Färdigrätt Thai Cube/Thai Soup
 Färdigrätt Thaibox, grön curry
+Färskost
 Färskost, laktosfri
 Färskost, vitlök & örter
 Färskpasta/Gnocchi
 Garderobsblomma i kruka
 Giffel
 Glas Gin & Tonic/Öl
+Glass Djungelmix Leo's
 Glasspinne Pirulo, flerpack
-Godispåse Tutti Frutti/Tyrkisk Peber
+Godispåse Gott & Blandat With Love
 Gosedjur m. godis
 Granatäpple
 Grand Dessert
@@ -215,11 +221,13 @@ Kebab/Kycklingkebab, förkokt
 Ketchup/Majonnäs
 Kex Spröda, havssalt
 Kikärtor, konserv
+Kiwi, gul i ask
 Kiwi, gul i korg
 Kladdkaka
 Kladdkaka Kärleksmums-
-Kladdkaka Marabou
+Kladdkaka XXL
 Klubba Marschmallow-, julmotiv
+Knivslip
 Knäckebröd Power-
 Kokkorv, konserv
 Kokosgrädde
@@ -259,7 +267,6 @@ Ljusslinga Akku, 40 LED
 Ljusslinga Akku, 80 LED
 Läsk, burk, 20-p
 Lättdryck, koncentrat
-Långfranska, skivad
 Långfranska/Snoddas, butiksbakad
 Lök Röd-, picklad
 Lök, röd i nät, eko
@@ -281,6 +288,7 @@ Medwurst Cognacs-
 Ministollen
 Mjölkdryck, laktosfri
 Mjölkdryck, lätt/mellan/standard, laktosfri
+Mjölkskummare
 Mopp 1-2-Spray Max, refill
 Mopp 1-2-Spray Max, startkit
 Mopp SuperMocio, refill
@@ -292,6 +300,7 @@ Nudlar Glas-
 Nudlar Ris-
 Nudlar i kopp
 Nötfärs
+Nötfärs, eko
 Nötgrytbitar
 Nürnberger Pepparkaka Lebkuchen
 Oliver
@@ -302,6 +311,7 @@ Olivolja Classico Extra Virgin
 Olivolja, eko
 Olja, smaksatt
 Oljeljus
+Orkidé Brud-, 2-stänglad
 Ost Familjefavoriter, riven
 Ost, lagrad
 Ostbricka
@@ -316,6 +326,7 @@ Panettone/Pandoro, mini
 Papper Hushålls-
 Paprika Snack-, röd i påse
 Paprika, grillad, inlagda
+Passionsfrukt, kuber
 Pasta
 Pastasås, tetrapack
 Patébricka, 10-p
@@ -324,6 +335,7 @@ Pepparkaka Lebkuchen
 Pepparkaka Lebkuchen,  jordgubb/plommon
 Pepparkaka Lebkuchen, aprikosfylld
 Pepparkaka, mjuk
+Pepparkakor
 Pepparkakshjärtan, små
 Persimon
 Picnicbog av fläskkött
@@ -331,6 +343,7 @@ Pitabröd, 5-p
 Pizzadeg/Pizzakit
 Plastfolie
 Plastpåse
+Plommon
 Pommes Frites/-Strips
 Porchetta av fläsksida
 Potatis
@@ -367,6 +380,7 @@ Rosor Premium
 Rulltårta Maräng-
 Russin
 Ryggbiff m. kappa, skivad, 2-p
+Räkor, handskalade
 Räkor, skalade
 Rödbeta i påse
 Rödbeta/Smörgåsgurka, inlagd
@@ -375,7 +389,7 @@ Salami Magnifico-/Peperonico-
 Salami Milano-/Ventricina-, skivad
 Salami i kupa, skivad
 Sallad
-Sallad Crisp- i påse
+Sallad Krisp-
 Sallad i påse, eko
 Salladskyckling
 Salladslök i knippe
@@ -396,12 +410,14 @@ Skinka, lufttorkad
 Skinka, rökt, strimlad
 Skogaholmslimpa, skivad
 Skogaholmslimpa/Varsågod, skivad
+Smashburger, vildsvin/älg
 Småbrödsform
 Småcitrus i nät
 Smör, normalsaltat
 Snabbkaffe
 Snabbkaffe Gold/Gold Crema
 Snabbkaffe Original, softpack
+Snabbkaffe, original/gold
 Snabbkaffe, softpack
 Snack Noodle/Snack Pot
 Snacks
@@ -409,14 +425,18 @@ Soja
 Soppa Ost & Broccoli-/Skaldjur-
 Soppa, kyld
 Sopsäck m. handtag
+Sorbet
 Spaghetti, eko
 Special K
 Sportbröd, skivat
+St Paulia i kruka
 Steamer
 Stekpanna Change
 Stektermometer, digital
+Stilldrink, flaska
 Stollen
 Syltlök
+Säsongsbukett
 Sås
 Sås Hoisin-
 Sås Mayo,- flaska
@@ -430,6 +450,7 @@ Tandborsthuvud, refill
 Tapas, skivad
 Tartlets
 Tepåse
+Termosmugg
 Tex-Mexost/Pizzaost, riven
 Toalettrengöring Aktiv Gel
 Toalettrengöring Power Active
@@ -444,19 +465,23 @@ Tortilla Soft-, 6-12-p
 Tortilla Stand 'N Stuff, 8-p
 Tortilla, 8-p
 Trimmer OneBlade
+Tryckkokare
 Tryffelolja, vit
 Tuggummi
 Tändpåsar
 Tårta
+Tårta Salted Caramel
 Tårta, 6-8-port.
 Vaniljhjärta, butiksbakat
 Varmkorv/Wienerkorv, laktosfri
 Vatten, kolsyrat
 Vatten, kolsyrat, 6-p
+Vattenflaska
 Vegetariska måltidsdelar
 Vilja Fullkorn/Vilja Guld/Vilja Lingon, skivad
 Vindruvor Autumn Crisp, gröna i ask
 Vindruvor Red Globe m. kärnor
+Vindruvor, röda, kärnfria i ask
 Vitaminer
 Vitlök, stor
 Västerbottensost, lagrad
@@ -466,12 +491,11 @@ Yoghurt Grekisk-, naturell
 Yoghurt Protein-
 Yoghurt, naturell/vanilj
 Zucchini, grön
-iKaffe, mjölkfri
 Ädelost
 Ägg, eko
 Äpple Aroma/Ingrid Marie/Rubinola/Piruette
 Äpple Royal Gala i påse
-Äpple, röda i påse
+Äpple Rubis Gold
 Ångstrykjärn
 Öl, alkoholfri, burk, 6-p
 Öron-/Näshårstrimmer

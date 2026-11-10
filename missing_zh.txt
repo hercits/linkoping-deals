@@ -223,6 +223,7 @@ Kycklingbröstfilé XXL
 Kycklingbröstfilé/Kycklinginnerfilé/Kycklinglårfilé
 Kycklingburgare/Kyckling Sallads-/Kyckling Taco-
 Kycklingdelar, friterade/grillade/kryddade
+Kycklingfilé
 Kycklinggrillkorv
 Kycklingklubba
 Kycklingnuggets
@@ -413,6 +414,7 @@ Vegoprodukter
 Vetemjöl, eko
 Vindruvor Moldova, mörka
 Vindruvor, röda, kärnfria i ask
+Vitfiskpaket m. vitlök & örter
 Vitkål, eko
 Värmeljus LED
 Växt, grön i keramikkruka

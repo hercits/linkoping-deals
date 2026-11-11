@@ -314,6 +314,7 @@ Pizzadeg
 Pizzadeg, surdeg
 Plastfolie
 Plastpåse
+Plommon, röda i ask
 Pommes Frites
 Potatis i påse, eko
 Potatis i påse, fast/mjölig, eko

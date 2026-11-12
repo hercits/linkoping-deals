@@ -22,15 +22,18 @@ Babytvål/Babyschampo
 Bacon, skivat, 3-p
 Bacon, skivat, 3-p/tärnat
 Bacon, tärnat/Kycklingbacon
+Baguette Hel-
 Baguette, vitlök/örtkrydda, 3-p
 Bakchoklad, ljus/mörk
 Bakchoklad, vit
 Bakelse Prinsess-, 2-p
 Bakelse Profiteroles-, fylld
+Bakform
 Bakmatta, silikon
 Bakplåtspapper
 Balsamvinäger, glasflaska
 Barnmat, klämpåse
+Begonia i kruka
 Bimi i påse
 Binda
 Bladpersilja i påse
@@ -47,6 +50,7 @@ Bulle Kanel-/Pistage-/Vanilj-, 10-p
 Bärdryck/Fruktdryck, koncentrat
 Bönor/Kikärtor/Linser, tetrapack, eko
 Carpaccio, skivad
+Cashewnötter, rostade & saltade
 Cheddarost
 Cheddarost/Goudaost/Havartiost
 Cheddarost/Goudaost/Havartiost, lagrad
@@ -128,6 +132,7 @@ Fågelmat Solrosfrö, strimmig
 Fågelmat Talgboll
 Gaständare
 Getmesost Gudbrandsdalen/Jarlsbergsost/Norvegiaost
+Giffel Saffrans-/Lussekatt, små
 Glass XXL, mini
 Glass, flerpack/Glass, pint
 Glasspinne Classic m. mandel XXL
@@ -136,6 +141,7 @@ Godispåse Bilar
 Godispåse Gott & Blandat
 Godispåse S-märke
 Goudaost
+Goudaost, skivad
 Gourmetbröd Tranbär/Müslibröd, butiksbakat
 Grana Padanoost
 Granatäpple
@@ -143,6 +149,7 @@ Granola
 Grillkorv Delikatess-, skinnfri
 Grillost
 Grillost Norrloumi
+Gryta Gjutjärns-
 Grytbas
 Grädde Mat-, laktosfri
 Grädde Mat-/Grädde Visp-/Vaniljvisp
@@ -176,14 +183,18 @@ Hundmat Delikat
 Hundmat, torrfoder
 Hyacint i kruka
 Hyacint, 3 st i kruka
+Induktionskokplatta
 Isterband Kalas-/Isterband, syrliga
 Jordnötsbågar
 Jordnötter XXL, honungsrostade
 Juice Äpple-
 Juice/Nektar
 Julkaffe
+Julkaktus i kruka
 Julmugg
 Julmust, flaska, 12-p
+Julmust, original/sockerfri
+Julostkaka
 Julskinka, skivad
 Jättefranska/Rasker, skivad
 Kaffe XXL, hela bönor
@@ -207,6 +218,7 @@ Kex Salta-
 Kex, fyllda
 Knut Saffrans-
 Knäckebröd Din Harmoni/Din Stund
+Knäckebröd Rund-, kanel/sesam & havssalt/vete
 Kokos, riven
 Korv, färsk
 Korv, vegansk
@@ -215,9 +227,11 @@ Krydda i påse
 Kryddmix
 Kryddmix, 3-p
 Kryddmix/Nudlar
+Krysantemum Flowerpops Winter
 Kyckling
 Kyckling Lagat & Klart
 Kyckling, grillad
+Kycklingben
 Kycklingben, marinerade
 Kycklingbröstfilé XXL
 Kycklingbröstfilé/Kycklinginnerfilé/Kycklinglårfilé
@@ -225,12 +239,12 @@ Kycklingburgare/Kyckling Sallads-/Kyckling Taco-
 Kycklingdelar, friterade/grillade/kryddade
 Kycklingfilé
 Kycklinggrillkorv
-Kycklingklubba
 Kycklingnuggets
 Kycklingschnitzel, 4-p
 Kycklingsnacks
 Kålmix Vitkål & Morot, skuren i påse
 Köksredskap, trä
+Köttkvarn, elektrisk
 Lammgrytbitar
 Lammgrytbitar m. ben
 Lampa
@@ -267,7 +281,9 @@ Margarin Bords-, eko
 Margarin Bords-, mellan
 Margarin Bords-, original
 Marsipanbröd
+Marsipantårta i ask
 Matmix, 2-p
+Mixer
 Mjölkdryck, lätt/mellan/standard, laktosfri
 Morot i påse, eko
 Mozzarellaost
@@ -292,12 +308,15 @@ Olivolja, eko
 Ostbricka Fransk-
 Ostcrème/Pastasås
 Ostkaka
+Pak Choi
+Panna Traktör- m. lock, gjuten aluminium
 Pannkakor, 12-p
 Papper Toalett-
 Paprika Spets-, röd i påse
 Paprika, grillad, inlagda
 Parisergrill, skivad
 Parmesanost Parmigiano Reggiano + kniv
+Parmesanost Parmigiano Reggiano, lagrad
 Pasta
 Pastasås, tetrapack
 Paté Vilt-
@@ -314,11 +333,13 @@ Pizzadeg
 Pizzadeg, surdeg
 Plastfolie
 Plastpåse
-Plommon, röda i ask
+Plommon
+Pomelo Honungs-
 Pommes Frites
 Potatis i påse, eko
 Potatis i påse, fast/mjölig, eko
 Potatis, fast sort i påse
+Premiumglass
 Prinskorv Deli-, laktosfri
 Prinskorv, laktosfri
 Proteinbar/Återhämtningsdryck
@@ -339,6 +360,7 @@ Ricottaost
 Ris
 Ris Avorio-
 Ris Basmati-
+Riskokare
 Risotto
 Rispapper
 Roquefort, blåmögelost
@@ -350,6 +372,7 @@ Rödbeta/Smörgåsgurka, inlagd
 Röra/Sallad
 Saffran Sargol, hela pastiller
 Saffran i påse
+Saffranskaka
 Salami
 Salami i kupa, skivad
 Sallad Isbergs-
@@ -360,13 +383,16 @@ Salladslök i knippe
 Salladsost XXL
 Salsa Roasted Garlic
 Salsiccia m. tryffel, färsk
+Salt-/Pepparkvarn, elektrisk
 Salta Pinnar
 Sardeller i olja
 Schiacciata
 Sejfilé, panerad, färsk
+Serveringsfat, bambu
 Servetter
 Skinka Prosciutto
 Skogaholmslimpa/Varsågod, skivad
+Skärmaskin
 Slickepott
 Småbrödsform
 Smörgåstårta
@@ -378,7 +404,9 @@ Soja
 Solrosolja
 Sopsäck m. handtag
 Spareribs av fläskkött BBQ/Chili/Jul-
+Stekpanna m. nonstickbeläggning
 Stureost
+Surprise Chokladägg, 3-p
 Sås
 Sås Mayo,- flaska
 Sås, burk
@@ -404,7 +432,9 @@ Tuggummi
 Tvättmedel/Sköljmedel, flytande/pulver
 Tvättservetter Baby-
 Ugn/Grill och Frysfolie
+Ugnsform, stålplåt
 Umamifärs
+Vakuumförpackare
 Valnötter Grenoble m. skal
 Vaniljsocker, eko
 Vatten, kolsyrat

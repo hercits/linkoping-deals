@@ -11,6 +11,7 @@ Aluminiumfolie
 Amaryllis i kruka
 Amaryllis, 2-stänglad i kruka
 Amaryllis, röd, 2-stänglad
+Amaryllis, snittblomma
 Ananas, extra söt
 Antikljus
 Apelsin
@@ -38,6 +39,7 @@ Bimi i påse
 Binda
 Bladpersilja i påse
 Blandfärs 50/50
+Blandfärs, eko
 Bomullsrondell
 Bondbröd
 Braständare
@@ -135,6 +137,7 @@ Getmesost Gudbrandsdalen/Jarlsbergsost/Norvegiaost
 Giffel Saffrans-/Lussekatt, små
 Glass XXL, mini
 Glass, flerpack/Glass, pint
+Glass, tuttifrutti, flerpack
 Glasspinne Classic m. mandel XXL
 Glassås
 Godispåse Bilar
@@ -196,6 +199,7 @@ Julmust, flaska, 12-p
 Julmust, original/sockerfri
 Julostkaka
 Julskinka, skivad
+Julstjärna, grenad
 Jättefranska/Rasker, skivad
 Kaffe XXL, hela bönor
 Kaffebryggare Create 3
@@ -216,6 +220,7 @@ Kebabkött Döner- av nöt
 Ketchup/Majonnäs
 Kex Salta-
 Kex, fyllda
+Kiwi i korg
 Knut Saffrans-
 Knäckebröd Din Harmoni/Din Stund
 Knäckebröd Rund-, kanel/sesam & havssalt/vete
@@ -252,8 +257,10 @@ Lantgoda/Roast'n toast, skivat
 Lasagne Karins Familje-/Lyx-
 Lasagneplattor
 Lax Sallads-, varmrökt
+Lax, kallrökt, skivad
 Laxfilé
 Laxfilé, 4-p
+Laxfilé, hel sida, färsk
 Leverpastej, bredbar/skivbar i ask
 Linser, röda
 Ljuslykta LED

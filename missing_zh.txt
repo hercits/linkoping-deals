@@ -31,11 +31,13 @@ Bacon, skivat, 3-p
 Bacon/Falukorv, extra fin/Kycklingköttbullar
 Bakchoklad, mörk
 Bakplåtspapper
+Bakplåtspapper/Plastfolie
 Bakpotatis
 Bakpulver, eko
 Banan
 Barnmat, klämpåse
 Barnsmoothie Min Frukt-/Min Fruktgröt-, klämpåse
+Batteri 9V
 Biff/Entrecôte av nöt
 Bimi i påse
 Bladpersilja i flowpack
@@ -85,8 +87,11 @@ Deo Roll-on/Duschcreme
 Digestivekex Oliv-
 Dip/Toppingsås
 Dipmix
+Diskmaskinsrengöring
+Doftljus Fiona
 Donut, butiksbakad
 Elvisp
+Engångsmugg Glögg
 Fiberrost/Originalrost, skivad
 Filmjölk, original/laktosfri
 Fiskpinnar
@@ -141,6 +146,7 @@ Hamburgare av nöt, eko, 4-p
 Hamburgare, 10-p
 Hamburgare, 4-p
 Hamburgare, eko
+Handdiskmedel Max Power/Platinum
 Havredryck iKaffe
 Havregryn Fiber-
 Havrekuddar/Havreringar
@@ -206,6 +212,7 @@ Kondisbit, 6-p
 Koriander
 Kornblomst, blåmögelost, eko
 Korv, färsk
+Krabba, kokt
 Krydda i påse
 Kryddmix
 Kräfta Havs- 20/40, färsk, kokt
@@ -254,6 +261,7 @@ Marmelad, hallon/svarta vinbär
 Marsipanbröd
 Marsipanbröd, 5-p
 Matbröd
+Matfolie/Ugns- & Grillfolie
 Matmix, 2-p
 Matolja
 Medwurst Cognacs-, alspånsrökt/enrisrökt
@@ -290,6 +298,7 @@ Ost, riven, original/eko
 Palsternacka i påse, eko
 Pan Pizza/Pirog
 Panettone Classico
+Papper Hushålls-/Papper Toa- Classic
 Papper Toalett-
 Papper Toalett- Classic
 Paprika Spets-, röd i påse
@@ -409,6 +418,7 @@ Tapaskorv
 Tepåse
 Tepåse, pyramid
 Tiramisu
+Toalettrengöring Aktiv Gel
 Toalettrengöring Power Active/WC block
 Tomat Snack- i ask
 Tomat, krossad, tetrapack, eko
@@ -421,7 +431,9 @@ Tortilla, 8-p
 Tuggummi
 Tvättmedel Color, flytande
 Tvättmedel Wonder Wash, flytande
+Tvättservetter
 Tvål, flytande
+Tändbriketter
 Ugnsform m. lock, glas
 Varmkorv/Wienerkorv, laktosfri
 Vatten, kolsyrat

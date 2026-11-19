@@ -6,6 +6,7 @@ Alaska Pollock, ryggfilé, 3-p
 Aloe vera/Babyschampo/Babytvål/Bubbelbad
 Aluminiumfolie
 Amaryllis Jumbo-
+Amaryllis Jumbo- i kruka
 Amaryllis i kruka
 Amaryllis, 2-stänglad
 Amaryllis, 2-stänglad i kruka
@@ -29,6 +30,7 @@ Bacon
 Bacon, skivat
 Bacon, skivat, 3-p
 Bacon/Falukorv, extra fin/Kycklingköttbullar
+Baguette, vitlök/örtkrydda
 Bakchoklad, mörk
 Bakplåtspapper
 Bakplåtspapper/Plastfolie
@@ -58,6 +60,7 @@ Buljongtärning
 Bär-/Fruktdryck
 Bönpasta/Linspasta
 Cabanossy/Chorizo
+Champinjoner
 Cheez/Chips
 Chips Nachos-/Tacokrydda, 3-p
 Chokladask Aladdin/Paradis
@@ -90,7 +93,9 @@ Dipmix
 Diskmaskinsrengöring
 Doftljus Fiona
 Donut, butiksbakad
+Dörrkrans, jul
 Elvisp
+Energidryck, 15-p
 Engångsmugg Glögg
 Fiberrost/Originalrost, skivad
 Filmjölk, original/laktosfri
@@ -110,8 +115,10 @@ Fryspåse/Plastpåse
 Färdigrätt Husman
 Färdigrätt Thai Cube
 Färskost
+Färskost i ask
 Färskost, original/laktosfri/plant based
 Gaständare
+Glass Mini Cups, 4-p
 Glass, pepparkaka/saffran
 Glassbåt/Sandwich, flerpack
 Glassdessert, mini
@@ -164,7 +171,9 @@ Hundmat Delikat
 Hundmat, torrfoder
 Hushållsost från Götene
 Hyacint i kruka
+Hyacint, 3-p
 Hårfärg Natural & Easy
+Jordgubbar, skivade
 Jordnötsbågar
 Jordnötssmör, crunchy/smooth, eko
 Jordnötssmör, eko
@@ -237,10 +246,12 @@ Lammrostbiff
 Lampa
 Lantbröd Grekiskt-/Surdegsbröd Italienskt-
 Lantbröd Grekiskt-/Surdegsbröd Italienskt-, butiksbakat
+Laxfilé, 4-p
 Laxfilé, hel sida, färsk
 Lemonad
 Levain
 Leverpastej, bredbar i ask
+Lime
 Limpa m. morot & solrosfrön/Limpa m. valnöt, russin & honung, butiksbakad
 Linfröbröd/Lingonbröd/Mellangrova, skivat
 Ljuslykta LED
@@ -284,7 +295,6 @@ Nudlar Glas-
 Nudlar Ris-
 Nudlar i kopp
 Nötbräck i choklad, mini
-Nötfärs
 Nötgrytbitar
 Nötkräm Pistage- & Jordnöts-
 Nötstek
@@ -310,6 +320,7 @@ Pasta
 Pasta Form-, eko
 Pepparbiff av rostbiff
 Pepparkakor
+Pepparkakskulor
 Pesto
 Petflaska
 Pinsa
@@ -317,9 +328,11 @@ Pinsa XL, surdeg
 Pinsasås/Pizzasås/Tomat, passerad, konserv/tetrapack
 Pizza Salami, mini
 Pizza m. skinka & tryffelsås
+Pizzadeg XXL
 Pizzadonut
 Plastfolie
 Plastpåse
+Plommon
 Plättar
 Polkagriskäppar
 Pomelo Honungs-
@@ -338,6 +351,7 @@ Pyttipanna Krögar-, vegetarisk
 Päron Conference i korg
 Päron Migo, 6-p
 Pålägg Tunna Skivor
+Quattrocento
 Rapsolja- & Olivolja
 Rengöringsspray, eko
 Ris Avorio-
@@ -360,12 +374,14 @@ Räkor, skalade, 4-p
 Räksallad/Skagenröra
 Rågbröd
 Rågkaka/Vetekaka, 24-30-p
+Rödbeta
 Rödbeta/Smörgåsgurka, inlagd
 Rödbetssallad
 Rödräkor, skalade
 Saffran
 Saffran i påse
 Salami Gårds- Diavola Toscana
+Sallad Krisp-
 Salladskyckling
 Salladslök i knippe
 Salladsmix i påse
@@ -420,6 +436,7 @@ Tepåse, pyramid
 Tiramisu
 Toalettrengöring Aktiv Gel
 Toalettrengöring Power Active/WC block
+Toastbröd, skivat
 Tomat Snack- i ask
 Tomat, krossad, tetrapack, eko
 Tomatmix i ask
@@ -435,6 +452,7 @@ Tvättservetter
 Tvål, flytande
 Tändbriketter
 Ugnsform m. lock, glas
+Varmkorv, 18-p
 Varmkorv/Wienerkorv, laktosfri
 Vatten, kolsyrat
 Vatten, kolsyrat, 12-p
@@ -444,6 +462,7 @@ Vetemjöl Kärn-
 Vetemjöl Pizzeria-
 Vindruvor Autumn Crisp, gröna, kärnfria
 Vindruvor Moldova, mörka
+Vitost i saltlag
 Västerbottensost, riven
 Vårrulle
 Wienerbröd

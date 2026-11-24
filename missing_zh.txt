@@ -4,6 +4,7 @@ Adventsljusstake Ada, 7 ljus
 Adventsljusstake Idre, 5 ljus
 Adventsljusstake Idre, 7 ljus
 Adventsljusstake Idre, 9 ljus
+Adventsljusstake Jan, 7 ljus
 Adventsljusstake Jarve, 7 ljus
 Adventsljusstake Julita, 5 ljus
 Adventsljusstake Måns, 5 ljus
@@ -30,6 +31,7 @@ Apelsin
 Apelsin i nät
 Avokado
 Avokado, mogen
+Avokado, mogen, 3-p
 Babyspenat i påse, eko
 Babytvål/Babyschampo
 Bacon, skivat, 5-p
@@ -57,6 +59,7 @@ Blomkål
 Blåbär i ask
 Blåbär, frysta, eko
 Blöja
+Blöja Baby Dry/Premium Protection
 Bog/Fläskkarré/Sidfläsk, svartrökt
 Bondlimpa, skivad
 Braständare
@@ -64,6 +67,7 @@ Brieost
 Brieost/Getost
 Brieost/Ädelost i tub
 Brioche Burger Bun
+Brookie/Brownie/Cookies
 Bröd Italienskt-, butiksbakat
 Buffalo Wings, grillkryddade
 Buljongtärning
@@ -71,6 +75,7 @@ Buljongtärning/Fond du Chef
 Bulle Saffrans-
 Böngroddar i ask, eko
 Camembertost
+Capellini/Pasta, korta former/Spaghetti
 Champagneglas/Vinglas
 Cheddarost
 Cheez/Chips
@@ -82,6 +87,7 @@ Chips/Nötmix
 Chips/Snacks
 Chips/Tacosås/Tortilla
 Choco Crunch/Smash
+Chokladask
 Chokladask Aladdin/Paradis
 Chokladask Noblesse
 Chokladask Northern Selection
@@ -94,6 +100,7 @@ Chokladpåse
 Chokladpåse Daim
 Chokladpåse Kina
 Chokladpåse Non Stop
+Chèvreost
 Citron, eko
 Clementin
 Clementin Clemenules
@@ -103,6 +110,7 @@ Croissant m. kalkonkorv
 Croissant m. nougatfyllning
 Dadlar
 Dadlar, färska
+Dagkräm/Nattkräm/Ögonkräm Q10
 Dammsugare Cyclone
 Dammsugare Readyy'y 2-i-1
 Dekorationsmossa/Hyacint
@@ -129,6 +137,7 @@ Fish & Crisp, panerad, 4-p
 Fiskpinnar/Fish & Fun
 Florsocker
 Fläskkarréstek
+Fläskkotlett m. ben
 Fläskmedaljong av kotlett, kryddad, benfri
 Fläskytterfilé, mörningsmarinerad
 Fralla, 10-p
@@ -145,6 +154,7 @@ Färdigrätt Leverlåda
 Färdigrätt Pirog Kött-
 Färdigrätt/Paj
 Färskkorv
+Färskost
 Färskost, original/laktosfri/plant based
 Gaudina
 Glass Pralin
@@ -174,6 +184,7 @@ Hamburgare
 Hamburgare av fläsk
 Hamburgerbröd Brioche, 4-p
 Handdiskmedel Max Power/Platinum
+Haricots Verts/Salladsärtor/Sockerärtor
 Hasselnötter m. skal
 Hasselnötter, hackade
 Havredryck Barista, mjölkfri
@@ -184,6 +195,7 @@ Havrekuddar/Rågkuddar
 Havreris
 Himalayasalt
 Hjortstek
+Honung Blomster-, flytande
 Honung Manuka
 Honung, eko
 Hundgodis
@@ -203,6 +215,7 @@ Juice Jordgubb & Lime-
 Juice/Smoothie
 Julkorv, kokt
 Julmust
+Julmust, original/sockerfri
 Julmust/Läsk
 Julmust/Läsk, burk
 Julrevbensspjäll av fläskkött, tunna
@@ -233,6 +246,7 @@ Kaptenens Favoriter, alaska pollock/lax
 Kattgodis
 Kattgodis, stång, 3-p
 Kattmat Gold, 12-p
+Kattmat Menybox
 Kattmat i sås, 12-p
 Kattmat, 12-p
 Kattmat, mousse
@@ -256,12 +270,14 @@ Krydda i småglas
 Kryddmix
 Kryddmix Mellanöstern
 Kryddmix, 3-p
+Kräftstjärtar/Räkor i lake
 Kyckling
 Kyckling, hel, butiksgrillad
 Kycklingben
 Kycklingbröstfilé, naturell, tvådelad
 Kycklingbröstfilé, tunnskivad/tvådelad
 Kycklingburgare/-nuggets/-wings
+Kycklingdelar, friterade/grillade/kryddade
 Kycklingfilé
 Kycklingköttbullar
 Kycklingsnacks
@@ -284,6 +300,7 @@ Länkkorv
 Läsk, burk, 30-p
 Lördagskorv av fläskkött
 Lövbiff av fransyska, skivad
+Lövbiff av nötinnanlår, skivad, eko
 Maasdamerost, skivad
 Majskorn, konserv, eko
 Majskrok, eko
@@ -294,11 +311,14 @@ Mandelmassa
 Mango, eko
 Mannafrutti/Risifrutti
 Margarin Bords-, mellan
+Marmelad
 Marshmallows, mini
 Marsipan
 Marsipanbröd
+Marsipanbröd, 5-p
 Matfolie/Ugns- & Grillfolie
 Matmix, 2-p
+Melon Vatten-, mini
 Mjukost Ädelost i tub
 Mjölk
 Mjölk, karamelliserad/kondenserad
@@ -350,6 +370,7 @@ Plastpåse
 Porchetta av fläsksida
 Potatis Amandine/Mandel/Sparris i påse
 Potatis, fast sort i påse
+Prinskorv Deli-, laktosfri
 Prinskorv m. tunt skinn
 Prinskorv, laktosfri
 Proteinmilkshake
@@ -362,6 +383,7 @@ Päron Conference i korg
 Pålägg Tunna Skivor
 Raps & Smörolja, flytande
 Ravioli
+Reninstek
 Ricottaost
 Ris Avorio-
 Ris Basmati-
@@ -371,16 +393,19 @@ Rispapper
 Robotdammsugare m. moppfunktion
 Rostbiff av nöt
 Russin
+Russin, burk
 Ryggbiff av nöt
 Räkor Ishavs- 80/100 m. skal
 Räkor XXL, skalade
 Räkor i lake
 Räkor m. skal
+Räkor m. skal 50/70
 Räkor m. skal 70/90
 Räksallad/Skagenröra
 Rådjursstek, eko
 Rågbröd Danskt-/Vörtbröd
 Rågkaka/Vetekaka, 24-30-p
+Rödbeta i påse, eko
 Rödbeta/Smörgåsgurka, inlagd
 Rödbetssallad
 Saffran
@@ -399,7 +424,9 @@ Servetter
 Shot Ingefära-, eko
 Sida, rimmad
 Sidfläsk
+Sidfläsk m. svål
 Sill i glas
+Sill, inlagd, stekt
 Sirap
 Skinka Gourmet-, rökt, skivad
 Skinka Prosciutto Di Parma
@@ -441,6 +468,7 @@ Tomat, krossad, konserv
 Tomatmix i ask
 Tomatpuré
 Tomatröra
+Torskfilé, färsk
 Torskryggfilé
 Torskryggfilé, 3-p
 Tortilla Soft-, 6-12-p
@@ -449,6 +477,7 @@ Tunnbröd Abisko/Sarek, mjukt, mjölkfritt, 8-p
 Tvättservetter
 Tvål, flytande
 Tändbriketter
+Umamifärs
 Vaniljarom Bourbon-
 Varmkorv, laktosfri
 Vegetariska måltidsdelar
@@ -459,6 +488,7 @@ Vitost
 Vitost Extra Creamy
 Västerbottensost, lagrad
 Vörtbröd
+Yoghurt Grekisk-/Turkisk-
 Yoghurt, lakrits
 Yoghurt, mini/original
 Yoghurt, naturell, eko

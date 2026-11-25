@@ -21,6 +21,7 @@ Adventstjärna, papper, veckad
 Airfryer
 Airfryer, dubbel
 Aluminiumfolie
+Amaryllis Jumbo- i kruka
 Amaryllis i glasvas
 Amaryllis, 2-stänglad i kruka
 Amaryllis, 2-stänglad, i kruka
@@ -182,6 +183,7 @@ Hallon i ask
 Halstablett, påse
 Hamburgare
 Hamburgare av fläsk
+Hamburgare, 20-p
 Hamburgerbröd Brioche, 4-p
 Handdiskmedel Max Power/Platinum
 Haricots Verts/Salladsärtor/Sockerärtor
@@ -214,11 +216,14 @@ Juice Apelsin-
 Juice Jordgubb & Lime-
 Juice/Smoothie
 Julkorv, kokt
+Julkrans
 Julmust
 Julmust, original/sockerfri
 Julmust/Läsk
 Julmust/Läsk, burk
+Julren
 Julrevbensspjäll av fläskkött, tunna
+Julros i kruka
 Julskinka
 Julskinka av kalkon, kokt
 Julskinka m. svål, kokt
@@ -231,6 +236,7 @@ Julsmörgås
 Julstjärna Jester, i kruka
 Julstjärna Midi
 Julstjärna, 3-4 grenad
+Kaffe XXL, hela bönor
 Kaffe, original/eko
 Kaffekapsel
 Kakao/Mandelmassa
@@ -274,6 +280,7 @@ Kräftstjärtar/Räkor i lake
 Kyckling
 Kyckling, hel, butiksgrillad
 Kycklingben
+Kycklingbröstfilé, naturell, strimlad
 Kycklingbröstfilé, naturell, tvådelad
 Kycklingbröstfilé, tunnskivad/tvådelad
 Kycklingburgare/-nuggets/-wings
@@ -287,6 +294,7 @@ Köttbullar m. grönsaker
 Lammrostbiff
 Lampa
 Lax Regnbågs-, 4-p
+Lax, hel sida, färsk
 Lax, kallrökt, skivad
 Laxfilé, 4-p
 Laxfilé, hel sida, färsk
@@ -308,6 +316,7 @@ Majskyckling Gårds-
 Majskycklingbröstfilé
 Majssnacks, eko
 Mandelmassa
+Mandlar
 Mango, eko
 Mannafrutti/Risifrutti
 Margarin Bords-, mellan
@@ -367,7 +376,10 @@ Pirog Karelsk-, 30-p
 Pizza, stenugnsbakad, 2-3-p
 Plastfolie
 Plastpåse
+Plommon
+Pomelo Honungs-
 Porchetta av fläsksida
+Potatis
 Potatis Amandine/Mandel/Sparris i påse
 Potatis, fast sort i påse
 Prinskorv Deli-, laktosfri
@@ -414,10 +426,12 @@ Saft Bland-
 Saft Bland-, eko
 Salami
 Sallad Bland-/Isberg & Frisé-/Frisé & Mâche-
+Sallad Gentile-
 Salladsbar
 Salladskyckling
 Salladslök i knippe
 Salladsmix i påse
+Salsa Frukt-
 Salta Pinnar
 Sardeller i olja
 Servetter
@@ -452,19 +466,25 @@ Stekpanna, tefal
 Ströbröd Panko-
 Strössel
 Surdegsbröd, butiksbakad
+Surprise Chokladägg
 Sylt, eko
 Sylta Lantaladåb
 Sås
 Sås Mayo,- flaska
 Sötmandel, hackad & skållad
+Tacofärs, rullpack
+Tacokrydda
 Tacosås
+Tacosås/Tortilla Soft-, 8-p
 Tandborste, medium/soft
 Tandborsthuvud, refill
 Tepåse
 Toalettrengöring Aktiv Gel
 Toalettrengöring Power Active/WC block
+Tomat Plommon-
 Tomat, konserv
 Tomat, krossad, konserv
+Tomatmix
 Tomatmix i ask
 Tomatpuré
 Tomatröra

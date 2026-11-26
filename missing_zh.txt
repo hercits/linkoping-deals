@@ -137,6 +137,7 @@ Filébitar/Schnitzel/Sojanuggets, vegetariska
 Fish & Crisp, panerad, 4-p
 Fiskpinnar/Fish & Fun
 Florsocker
+Fläskkarré, benfri
 Fläskkarréstek
 Fläskkotlett m. ben
 Fläskmedaljong av kotlett, kryddad, benfri
@@ -345,6 +346,7 @@ Nötkaka Marsipan- & Pistage-
 Nötstek av fransyska
 Oliver
 Olivolja
+Olivolja Classico Extra Virgin
 Olivolja Extra Jungfru-
 Ost Familjefavoriter, original/eko
 Ost, lagrad
@@ -427,6 +429,7 @@ Saft Bland-, eko
 Salami
 Sallad Bland-/Isberg & Frisé-/Frisé & Mâche-
 Sallad Gentile-
+Sallad Roman- i påse
 Salladsbar
 Salladskyckling
 Salladslök i knippe
@@ -517,6 +520,7 @@ Yoghurt, original/mini
 Zucchini, grön
 iKaffe, mjölkfri
 Ädelost
+Ädelost i tub
 Äggvita
 Äpple Aroma/Ingrid Marie/Rubinola
 Äpple Giga
